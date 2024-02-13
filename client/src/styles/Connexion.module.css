@@ -1,0 +1,52 @@
+/* connexion.module.css */
+
+.mainConnexion{
+  max-width: 400px;
+  margin: 4em auto;
+  padding: 20px 20px 60px 20px;
+  border: 1px solid #ddd; /* Couleur de bordure similaire au header et au footer */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f8f8f8; /* Couleur de fond douce */
+  font-family: 'Lobster', cursive; /* Police d'écriture similaire au header et au footer */
+}
+
+.mainConnexion h3 {
+  text-align: center;
+  color: #333;
+  font-family: 'Lobster', cursive; /* Police d'écriture similaire au header et au footer */
+}
+
+.mainConnexion, .mainConnexion form  {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainConnexion 
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.button {
+  margin-bottom: 15px;
+}
+
+
+
+.mainConnexion p {
+  color: #333; /* Couleur du texte similaire au header et au footer */
+}
+
+.mainConnexion a {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+  font-family: 'Roboto', sans-serif; /* Police d'écriture pour le lien */
+}
+
+.mainConnexion a:hover {
+  color: #0056b3;
+}

@@ -1,0 +1,178 @@
+/* Navbar.module.css */
+
+.nav {
+  position: relative;
+  width: 100%;
+  height: auto;
+  
+}
+
+.spaceOverNav {
+  display: none
+}
+
+.containerLinks {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  
+}
+
+.containerShowcaseLinks {
+  grid-column: 1 / 3;
+}
+
+.containerSettingsLinks {
+  grid-column: 4 / 6;
+}
+
+
+.liste {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  
+}
+
+.liste a {
+  
+  text-decoration: none;
+  color: #333;
+  font-size: 19px;
+  font-style: bold;
+}
+
+.item:hover {
+  color: #6d1539;
+}
+
+.item {
+  font-size: 1.15em;
+  width: content;
+  color: #333;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* css du bouton */
+
+.btn {
+  display: none;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+}
+
+.contLigne {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ligneUnique {
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+  background: #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ligneUnique::before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  background: #333;
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+}
+
+.ligneUnique::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  background: #333;
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+}
+
+.contLigneActive {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contLigneActive .ligneUnique::after {
+  top: 0;
+  transform: rotate(45deg);
+  transition: top, transform 300ms;
+}
+
+.contLigneActive .ligneUnique {
+  background: transparent;
+}
+
+.contLigneActive .ligneUnique::before {
+  bottom: 0;
+  transform: rotate(-45deg);
+  transition: bottom, transform 300ms;
+}
+
+/*Transformation du menu pour petit écran*/
+@media screen and (max-width: 780px) {
+
+  .containerLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+
+  .spaceOverNav {
+    display:block
+  }
+
+  .liste {
+    flex-direction: column;
+    justify-content: center;
+    background-color: #F8F8F8;
+  }
+
+  .item {
+    height: 50px;
+    width: 100%;
+    margin: 0 0 0 0;
+    line-height: 50px;
+    text-align: center;
+    background-color: #F8F8F8;
+  }
+
+  .item a {
+    margin-right: auto;
+    padding-left: 100%;
+  }
+
+  .btn {
+    display: block;
+    top: -10px;
+    left: -10px;
+  }
+
+}
+

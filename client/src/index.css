@@ -1,0 +1,14 @@
+*{
+  font-family: 'Lobster', cursive; /* Police d'écriture */
+}
+
+html {
+  display: grid;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+

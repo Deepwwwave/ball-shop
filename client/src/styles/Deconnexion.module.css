@@ -1,0 +1,30 @@
+.mainContainer {
+   margin: 4em auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   max-width: 400px;
+   border: 1px solid #ddd; /* Couleur de bordure similaire au header et au footer */
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   background-color: #f8f8f8; /* Couleur de fond douce */
+   font-family: "Lobster", cursive; /* Police d'écriture similaire au header et au footer */
+   padding: 20px 20px 60px 20px;
+}
+
+.buttonContainer {
+   display: flex;
+   justify-content: space-around;
+   margin-top: 20px;
+}
+
+button {
+   margin-bottom: 10px;
+   padding: 10px 20px 10px 20px;
+   border: 1px solid #ccc;
+   border-radius: 3px;
+}
+
+button:hover {
+    color: #0056b3;
+  }

@@ -1,0 +1,58 @@
+/* VotreFichierDeStyles.module.css */
+
+.mainContainer {
+    text-align: center;
+ }
+ 
+ .articlesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+ }
+ 
+ .productArticle {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    width: 250px;
+    margin: 10px;
+ }
+ 
+ .articlesContainer section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+ }
+ 
+ .productImage {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+ }
+ 
+ .productInfo {
+    text-align: center;
+    
+ }
+ 
+ .priceContainer {
+    display: flex;
+    justify-content: center;
+    
+ }
+ 
+ .productDescription {
+    color: #666;
+    
+    text-align: center;
+ }
+ 
+ h3 {
+    margin-bottom: 10px;
+ }
+ 

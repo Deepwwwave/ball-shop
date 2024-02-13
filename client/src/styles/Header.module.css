@@ -1,0 +1,44 @@
+/* header.module.css */
+
+.mainContainer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: #f8f8f8;
+   border-bottom: 2px solid #ddd;
+   padding-right: 10%;
+   padding-left: 10%;
+}
+
+.bottomContainer {
+   display: flex;
+   justify-content: flex-end;
+   width: 100%;
+   margin-top: 20px;
+}
+
+.titleContainer {
+  font-size: 1.1em;
+}
+
+
+
+@media screen and (min-width: 780px) {
+   .mainContainer {
+      justify-content: space-between;
+      padding: 5px;
+      padding-right: 15%;
+      padding-left: 10%;
+   }
+
+   
+ .titleContainer {
+  margin-top: 10px;
+}
+}
+
+@media screen and (max-height: 420px) and (max-width: 1000px){
+  .titleContainer {
+    display: none;
+  }
+}

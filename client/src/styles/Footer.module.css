@@ -1,0 +1,14 @@
+/* footer.module.css */
+
+
+.container {
+  background-color: #f8f8f8; /* Couleur de fond douce */
+  padding: 20px;
+  border-top: 2px solid #ddd; /* Séparation avec le contenu de la page */
+  text-align: right;
+  color: #333; /* Couleur du texte */
+  font-family: 'Lobster', cursive; /* Police d'écriture */
+  height:25%;
+}
+
+/* Ajoute d'autres styles selon tes besoins */

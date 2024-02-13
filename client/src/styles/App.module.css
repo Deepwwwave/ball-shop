@@ -1,0 +1,41 @@
+:root {
+    --header-height: 25vh; /* Ajustez ces valeurs selon vos préférences */
+    --pageContainer-height: 75vh;
+  
+  }
+  
+  .app {
+    display: grid;
+    grid-template-rows: var(--header-height) var(--pageContainer-height);
+    height: 100h; /* Assurez-vous que la grille occupe la hauteur totale de la fenêtre */
+  }
+
+  body{
+    overflow-y: scroll;
+    margin: 0;
+  }
+  
+  
+  
+  
+  /* Utilisation de media queries pour ajuster les styles en fonction de la largeur de l'écran */
+  @media screen and (max-width: 670px) and (max-height: 380px){
+    :root {
+      --header-height: 15vh;
+      --pagContainer-height: 85vh;
+    }
+  }
+  
+  @media screen and (min-height: 650px) and (max-height: 839px){
+    :root {
+      --header-height: 25vh;
+      --pagContainer-height: 75vh;
+    }
+  }
+  
+  @media screen and (min-height: 840px) {
+    :root {
+      --header-height: 20vh;
+      --pagContainer-height: 80vh;
+    }
+  }

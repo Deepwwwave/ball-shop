@@ -1,0 +1,10 @@
+.mainContainer {
+    padding-left: 50px;
+    padding-top: 50px;
+    background-color: #F8F8F8;
+    height: 100vh;
+}
+
+.textContainer {
+    margin-bottom: 100px;
+}

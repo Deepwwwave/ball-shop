@@ -1,0 +1,17 @@
+*.env
+
+node_modules/
+
+.DS_Store
+.vscode/
+.idea/
+.cache/
+
+build/
+dist/
+
+.vscode/
+.idea/
+
+
+
