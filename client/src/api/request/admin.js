@@ -22,9 +22,13 @@ export const reqGetAllOrders = async () => {
     }
 }
 
-export const reqAddProduct = async (datas) => {
+export const reqAddProduct = async (formDatas) => {
     try {
-        const res = await axiosTokenHandler.post(`${backendUrl}/api/v1/admin/addProduct`, datas);
+        const res = await axiosTokenHandler.post(`${backendUrl}/api/v1/admin/addProduct`, formDatas, { // Utilisez formData comme deuxième paramètre
+            headers: {
+                'Content-Type': 'multipart/form-data' // Assurez-vous que le type de contenu est défini sur multipart/form-data
+            }
+        });
         return res.data
     } catch (error) {
         return error

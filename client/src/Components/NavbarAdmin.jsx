@@ -17,6 +17,7 @@ export default function NavbarAdmin() {
    };
 
    return (
+
       <div className={styles.container}>
          <ul className={styles.liste}>
             <NavLink to="products" onClick={changeToggle1} className={toggle1 && styles.toggle}>
@@ -26,6 +27,7 @@ export default function NavbarAdmin() {
                <li className={styles.item}>Commandes</li>
             </NavLink>
          </ul>
+         {/* <hr style={{ width: '20%' }} /> */}
       </div>
    );
 }
