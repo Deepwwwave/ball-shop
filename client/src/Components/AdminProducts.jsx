@@ -4,7 +4,7 @@ import Article from "../Components/Article";
 import MessageToast from "./ui/MessageToast";
 import useMessageToast from "../hooks/useMessageToast";
 import useProducts from "../hooks/useProducts";
-import { reqAddProduct, reqEditProduct } from "../api/request/admin";
+import { reqAddProduct, reqEditProduct, reqDeleteProduct } from "../api/request/admin";
 
 /***********************************************/
 /******************* ADD ***********************/
@@ -23,6 +23,7 @@ function AddArticle() {
       image: undefined,
    });
 
+   //Add
    const handleSubmit = async (e) => {
       e.preventDefault();
       try {
@@ -43,13 +44,14 @@ function AddArticle() {
       }
    };
 
-   const closeButtonScrollToTop = ()  => {
-      setShowAddForm (false)
+   //Scroll to top
+   const closeButtonScrollToTop = () => {
+      setShowAddForm(false);
       window.scrollTo({
          top: 0,
-         behavior: 'smooth' // Pour un défilement fluide, sinon, utilisez 'auto' ou 'instant'
-       });
-   }
+         behavior: "smooth", // Pour un défilement fluide, sinon, utilisez 'auto' ou 'instant'
+      });
+   };
 
    return (
       <section className={styles.addContainer}>
@@ -69,7 +71,9 @@ function AddArticle() {
                <input type="number" placeholder="Quantité" onChange={(e) => setNewInfos({ ...newInfos, quantity: e.target.value })} />
                <textarea placeholder="Description" style={{ height: "150px" }} onChange={(e) => setNewInfos({ ...newInfos, description: e.target.value })} />
                <button onClick={handleSubmit}>Enregistrer</button>
-               <button onClick={ closeButtonScrollToTop } className={styles.closeButton}>X</button>
+               <button onClick={closeButtonScrollToTop} className={styles.closeButton}>
+                  X
+               </button>
             </form>
          )}
          {message && <MessageToast content={message} />}
@@ -97,6 +101,7 @@ function EditOrDeleteArticle({ productId }) {
    const [showDeleteValidation, setShowDeleteValidation] = useState(false); // Affichage => "Voulez vous retirer l'article ?"(avec les buttons "oui" et "non")
    const [message, setMessage] = useMessageToast();
 
+   // Edit
    const handleSaveClick = async (e) => {
       e.preventDefault();
       console.log(newInfos.price);
@@ -109,6 +114,7 @@ function EditOrDeleteArticle({ productId }) {
 
          if (res.response) {
             console.log("Status erreur de requête: " + res.response.status);
+            setMessage(res.response.msg);
          } else {
             console.log(res.status + " " + res.msg);
             setMessage(res.msg);
@@ -121,10 +127,25 @@ function EditOrDeleteArticle({ productId }) {
       }
    };
 
-   const handleDeleteClick = (productId, e) => {
+   // Delete
+   const handleDeleteClick = async (e) => {
       e.preventDefault();
+      try {
+         const res = await reqDeleteProduct(productId);
+         if (res.response) {
+            setMessage(res.response.msg);
+         } else {
+            setMessage(res.msg);
+         }
+         setTimeout(() => {
+            window.location.reload();
+         }, 1000);
+      } catch (error) {
+         console.error("Error", error);
+      }
    };
 
+   // Gestion affichage des buttons "sauvegarder" et "delete" et affichage des buttons de confirmation "oui et "non"
    const validation = (type) => {
       if (type === "save") {
          if (!showSaveValidation) {
@@ -210,11 +231,11 @@ function EditOrDeleteArticle({ productId }) {
 /***********************************************/
 
 export default function AdminProducts() {
-   const { products, loading, error, urlServer } = useProducts();
+   const { products, loading, error, urlServer } = useProducts(); // Hook personnalisé de chargement des produits
 
    return (
       <div className={styles.mainAdminProductContainer}>
-         <AddArticle />
+         <AddArticle /> {/* Composant enfant definit plus haut */}
          <section className={styles.editDeleteContainer}>
             {loading && <p>Loading...</p>}
             {error && <p>Error: {error}</p>}
@@ -223,7 +244,7 @@ export default function AdminProducts() {
                products.map((product) => (
                   <div key={product.id} className={styles.articlesContainer}>
                      <Article key={product.id} product={product} urlServer={urlServer} />
-                     <EditOrDeleteArticle productId={product.id} /> {/* le composant enfant definit plus haut ( AdminArticle ) */}
+                     <EditOrDeleteArticle productId={product.id} /> {/* Composant enfant definit plus haut */}
                   </div>
                ))}
          </section>
