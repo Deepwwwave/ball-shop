@@ -5,6 +5,11 @@
     display: flex;
     font-size: 18px;
     padding-top: 10px;  /* le padding sert pour la hauteur du cart dans le header */
+    
+  }
+
+  .cartIcon {
+    color:rgb(66, 74, 118) 
   }
   
   .quantity {

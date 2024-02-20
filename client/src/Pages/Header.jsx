@@ -1,7 +1,7 @@
 // Header.js
 import React from "react";
 import Navbar from "../Components/Navbar";
-import Cart from "./Cart";
+import CartItemLinkNavbar from "../Components/CartItemLinkNavbar";
 import styles from "../styles/Header.module.css";
 
 export default function Header() {
@@ -12,7 +12,7 @@ export default function Header() {
          </div>
          <div className={styles.bottomContainer}>
             <Navbar className={styles.nav}/>
-            <Cart className={styles.cart} />
+            <CartItemLinkNavbar className={styles.cart} />
          </div>
       </div>
    );

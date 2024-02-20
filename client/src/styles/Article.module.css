@@ -2,3 +2,37 @@ body {
     margin: 0;
     padding: 0;
   }
+
+  .productArticle {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    width: 250px;
+    margin: 10px;
+ }
+
+ .productImage {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.productInfo {
+  text-align: center;
+  
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.productDescription {
+  color: #666;
+  text-align: center;
+}
+
+

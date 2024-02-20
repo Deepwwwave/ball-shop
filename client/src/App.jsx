@@ -12,6 +12,7 @@ import ArticleDetail from "./Pages/ArticleDetail";
 import PageError from "./Pages/PageError";
 import Connexion from "./Pages/Connexion";
 import Deconnexion from "./Pages/Deconnexion";
+import Cart from "./Components/Cart"
 import ValidateAccount from "./Pages/ValidateAccount";
 import ForgottenPassword from "./Pages/ForgottenPassword";
 import UpdatePassword from "./Pages/UpdatePassword";
@@ -68,6 +69,7 @@ function App() {
 
                <Route path="connexion" element={<Connexion />} />
                <Route path="deconnexion" element={<Deconnexion />} />
+               <Route path="cart" element={<Cart/>}/>
                <Route path="validate-account/:uuid" element={<ValidateAccount />} />
                <Route path="forgotten-password" element={<ForgottenPassword />} />
                <Route path="update-password/:uuid" element={<UpdatePassword />} />

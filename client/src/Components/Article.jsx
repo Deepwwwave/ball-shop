@@ -1,6 +1,7 @@
 
 import React from "react";
-import styles from "../styles/Boutique.module.css";
+import styles from "../styles/Article.module.css";
+
 
 export default function Article({ product, urlServer }) {
    return (

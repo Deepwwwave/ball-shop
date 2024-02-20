@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function useMessageToast(initialMessage = '', duration = 2000) {
+const useMessageToast = (initialMessage = '', duration = 2000) => {
   const [message, setMessage] = useState(initialMessage);
 
   useEffect(() => {
@@ -15,3 +15,5 @@ export default function useMessageToast(initialMessage = '', duration = 2000) {
 
   return [message, setMessage];
 }
+
+export default useMessageToast
