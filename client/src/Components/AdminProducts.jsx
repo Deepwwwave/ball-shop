@@ -11,7 +11,7 @@ import { reqAddProduct, reqEditProduct, reqDeleteProduct } from "../api/request/
 /***********************************************/
 
 function AddArticle() {
-   const [message, setMessage] = useMessageToast("");
+   const [message, setMessage] = useMessageToast();
    const [showAddForm, setShowAddForm] = useState(false);
    const [newInfos, setNewInfos] = useState({
       category: "",

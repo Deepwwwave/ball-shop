@@ -1,9 +1,9 @@
 /* cart.module.css */
 
-.cart {
+.cartItem {
     position: relative;
     display: flex;
-    font-size: 18px;
+    font-size: 20px;
     padding-top: 10px;  /* le padding sert pour la hauteur du cart dans le header */
     
   }
@@ -29,7 +29,7 @@
 
   
 @media screen and (min-width: 780px) {
-  .cart {
+  .cartItem {
     padding-top: 3px
   }
 }

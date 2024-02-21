@@ -8,9 +8,9 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 export default function CartItemLinkNavbar({ quantity }) {
    return (
-      <div className={styles.cart}>
+      <div className={styles.cartItem}>
          <NavLink to="cart">
-            <FontAwesomeIcon className={styles.cartIcon} icon={faShoppingCart} />
+            <FontAwesomeIcon className={styles.cartIcon} icon={faShoppingCart}/>
             {quantity > 0 && <span className={styles.quantity}>{quantity}</span>}
          </NavLink>
       </div>

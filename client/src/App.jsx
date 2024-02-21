@@ -40,8 +40,6 @@ function App() {
       } catch (error) {
          console.log("Error :", error);
       }
-      const token = localStorage.getItem("token");
-      console.log("Contenu du token :", token);
    };
 
    useEffect(() => {
