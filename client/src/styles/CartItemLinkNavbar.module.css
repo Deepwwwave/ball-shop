@@ -13,10 +13,10 @@
   }
   
   .quantity {
-    position: absolute;
-    top: -8px; /* Ajuste la position verticale pour aligner le cercle */
-    right: -8px; /* Ajuste la position horizontale pour aligner le cercle */
-    background-color: #6b4423; /* Couleur de fond pour la quantité */
+    position: relative;
+    top: -38px; /* Ajuste la position verticale pour aligner le cercle */
+    right: -22px; /* Ajuste la position horizontale pour aligner le cercle */
+    background-color:rgb(66, 74, 118); /* Couleur de fond pour la quantité */
     color: #fff; /* Couleur du texte pour la quantité */
     border-radius: 50%;
     width: 20px; /* Diamètre du cercle */
@@ -30,7 +30,15 @@
   
 @media screen and (min-width: 780px) {
   .cartItem {
-    padding-top: 3px
+    padding-top: 10px
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .cartItem {
+    padding-top: 10px;
+    margin-right: 5%;
   }
 }
   

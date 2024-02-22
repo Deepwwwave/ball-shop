@@ -37,6 +37,12 @@
 }
 }
 
+@media screen and (max-width: 370px) {
+  .titleContainer h1{
+    font-size: 1.6em
+  }
+}
+
 @media screen and (max-height: 420px) and (max-width: 1000px){
   .titleContainer {
     display: none;

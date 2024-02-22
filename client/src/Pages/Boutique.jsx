@@ -19,6 +19,7 @@ export default function Boutique() {
    const [message, setMessage] = useMessageToast()
 
    const handleAddToCart = (product) => {
+      console.log("Adding product to cart:", product);
       addToCart(product);
       setMessage("Ajouté au panier")
    };
@@ -42,7 +43,7 @@ export default function Boutique() {
          {!loading && !error && (
             <section className={styles.boutiqueArticlesContainer}>
                {products.map((product) => (
-                  <article className={styles.boutiqueArticleAndheartContainer}>
+                  <article  key={product.id} className={styles.boutiqueArticleAndheartContainer}>
                      <FontAwesomeIcon onClick={() => (isProductInCart(product.id, cartItems) ? handleRemoveFromCart(product.id) : handleAddToCart(product))} title={isProductInCart(product.id, cartItems) ? "Retirer du pannier" : "Ajouter au pannier"} className={isProductInCart(product.id, cartItems) ? styles.addCartActived : styles.addCart} icon={faSquarePlus} /> {/* Button add cart */}
                      <Article key={product.id} product={product} urlServer={urlServer} />
                   </article>

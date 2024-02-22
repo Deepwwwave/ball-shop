@@ -17,12 +17,12 @@ const cart = createSlice({
             const newItem = action.payload;
             const existingItemIndex = state.items.findIndex(item => item.id === newItem.id);
             if (existingItemIndex !== -1) {
-                state.items[existingItemIndex].quantity += newItem.quantity;
+                state.items[existingItemIndex].itemQuantity += 1;
             } else {
-                state.items.push({ ...newItem, quantity: 1 });
+                state.items.push({ ...newItem, itemQuantity: 1 });
             }
-            state.totalItems += newItem.quantity;
-            state.totalPrice += newItem.price * newItem.quantity;
+            state.totalItems += 1;
+            state.totalPrice += parseFloat(newItem.price);
             localStorage.setItem('cart', JSON.stringify(state)); // Mise à jour du local storage
         },
         removeItem(state, action) {
@@ -30,8 +30,8 @@ const cart = createSlice({
             const itemToRemoveIndex = state.items.findIndex(item => item.id === itemId);
             if (itemToRemoveIndex !== -1) {
                 const itemToRemove = state.items[itemToRemoveIndex];
-                state.totalItems -= itemToRemove.quantity;
-                state.totalPrice -= itemToRemove.price * itemToRemove.quantity;
+                state.totalItems -= itemToRemove.itemQuantity;
+                state.totalPrice -= parseFloat(itemToRemove.price * itemToRemove.itemQuantity);
                 state.items.splice(itemToRemoveIndex, 1);
             }
             localStorage.setItem('cart', JSON.stringify(state)); // Mise à jour du local storage
@@ -42,20 +42,23 @@ const cart = createSlice({
             state.totalPrice = 0;
             localStorage.removeItem('cart'); // Suppression des données du panier du local storage
         },
-        updateItemQuantity(state, action) {
-            const { id, quantity } = action.payload;
-            const itemToUpdate = state.items.find(item => item.id === id);
-            if (itemToUpdate) {
-                const prevQuantity = itemToUpdate.quantity;
-                itemToUpdate.quantity = quantity;
-                state.totalItems += quantity - prevQuantity;
-                state.totalPrice += itemToUpdate.price * (quantity - prevQuantity);
+        substractItemQuantity(state, action) {
+            const itemId = action.payload;
+            const itemToUpdate = state.items.find(item => item.id === itemId);
+            if (itemToUpdate && itemToUpdate.itemQuantity > 0) {
+                itemToUpdate.itemQuantity--;
+                state.totalItems--;
+                state.totalPrice -= parseFloat(itemToUpdate.price);
+                if (itemToUpdate.itemQuantity === 0) {
+                    state.items = state.items.filter(item => item.id !== itemId);
+                }
             }
             localStorage.setItem('cart', JSON.stringify(state)); // Mise à jour du local storage
         },
+        
     }
 });
 
-export const { addItem, removeItem, clearCart, updateItemQuantity } = cart.actions;
+export const { addItem, removeItem, clearCart, substractItemQuantity } = cart.actions;
 
 export default cart.reducer;

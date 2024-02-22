@@ -25,10 +25,11 @@
   /* Utilisation de media queries pour ajuster les styles en fonction de la largeur de l'écran */
   @media screen and (max-width: 670px) and (max-height: 380px){
     :root {
-      --header-height: 15vh;
-      --pagContainer-height: 85vh;
+      --header-height: 20vh;
+      --pagContainer-height: 80vh;
     }
   }
+
   
   @media screen and (min-height: 650px) and (max-height: 839px){
     :root {
