@@ -4,15 +4,16 @@
 }
 
 .cartItemsContainer {
-    width: 100%;
+    width: content;
 }
 
 .cartItemContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     margin-bottom: 20px;
     border: 1px solid #ddd;
     padding: 10px;
+    width: content;
 }
 
 .cartItemInfo {

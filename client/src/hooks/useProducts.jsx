@@ -39,6 +39,7 @@ const useProducts = () => {
     }
   }, [products]);
 
+  console.log(products.length)
   return { products, loading, error, urlServer };
 };
 
