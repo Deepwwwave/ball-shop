@@ -32,13 +32,11 @@ function AddArticle() {
          console.log(formData);
          const res = await reqAddProduct(formData);
          if (res.response) {
-            console.log("Status erreur de requête: " + res.response.status);
+            console.log("Status erreur de requête: " + res.response.data.msg);
+            setMessage(res.response.data.msg);
          } else {
             setMessage(res.msg);
          }
-         setTimeout(() => {
-            window.location.reload();
-         }, 1000);
       } catch (error) {
          console.error("Error", error);
       }
@@ -119,9 +117,6 @@ function EditOrDeleteArticle({ productId }) {
             console.log(res.status + " " + res.msg);
             setMessage(res.msg);
          }
-         setTimeout(() => {
-            window.location.reload();
-         }, 1000);
       } catch (error) {
          console.error("Error", error);
       }

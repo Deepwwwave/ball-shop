@@ -1,5 +1,6 @@
 import Product from "../models/product.model.js";
 import path from "path";
+import { io } from "../server.js";
 
 export const getAllProducts = async (req, res, next) => {
    const query = "SELECT * FROM product";
@@ -89,8 +90,13 @@ export const addProduct = async (req, res, next) => {
       quantity: req.body.quantity,
    };
 
+
+
    const query = "INSERT INTO product (date, category, description, imageUrl, color, price, quantity) VALUES (NOW(),?,?,?,?,?,?)";
    try {
+      if (!req.files || !req.files.image) {
+         return res.status(400).json({ msg: "Aucune image téléchargée" });
+      }
       const image = req.files.image;
       const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
       const imageName = `image-${uniqueSuffix}${path.extname(image.name)}`;
@@ -109,6 +115,7 @@ export const addProduct = async (req, res, next) => {
          msg: "product added !",
          newToken: newToken,
       });
+      io.emit("productsUpdated", { msg: "Added !" });
    } catch (error) {
       return next(error);
    }
@@ -124,6 +131,7 @@ export const deleteProduct = async (req, res, next) => {
          msg: "product deleted",
          newToken: newToken,
       });
+      io.emit("productsUpdate", { msg: "Deleted !" });
    } catch (error) {
       return next(error);
    }
@@ -192,6 +200,7 @@ export const editProduct = async (req, res, next) => {
             msg: "product updated!",
             newToken: newToken,
          });
+         io.emit("productsUpdated", { msg: "Edited !" });
       }
    } catch (error) {
       return next(error);
