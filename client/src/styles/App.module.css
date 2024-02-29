@@ -7,7 +7,7 @@
   .app {
     display: grid;
     grid-template-rows: var(--header-height) var(--pageContainer-height);
-    height: 100h; /* Assurez-vous que la grille occupe la hauteur totale de la fenêtre */
+    height: 100vh; /* Assurez-vous que la grille occupe la hauteur totale de la fenêtre */
   }
 
   body{
@@ -40,7 +40,7 @@
   
   @media screen and (min-height: 840px) {
     :root {
-      --header-height: 20vh;
-      --pagContainer-height: 80vh;
+      --header-height: 18vh;
+      --pagContainer-height: 82vh;
     }
   }

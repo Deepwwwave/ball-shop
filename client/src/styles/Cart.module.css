@@ -1,54 +1,154 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+
 .cartMainContainer {
-    width: 80%;
-    margin: 0 auto;
+   min-height: 100%;
+}
+
+.cartTitle {
+   text-align: flex-start;
+   margin: 100px;
+   font-weight: 100;
+   font-size: 26px;
+}
+
+.voidCart {
+   font-size: 40px;
+   text-align: center;
+   padding-top: 200px;
+   font-style: italic;
+   font-weight: lighter;
+   font-family: "Bad Script", cursive;
+   font-weight: 400;
+   font-style: normal;
+}
+
+.cartFlexContainer {
+   margin: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   width: 900px;
+   background-color: #f8f8f8;
+   font-size: 1.2em;
+}
+
+.cartTitles {
+   display: flex;
+   justify-content: flex-end;
+   width: 364px;
+   margin-left: 470px;
+   padding: 30px;
+   
 }
 
 .cartItemsContainer {
-    width: content;
+   display: flex;
+   justify-content: space-around;
+   border: solid 1px white;
 }
 
-.cartItemContainer {
-    display: flex;
-    justify-content: start;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    width: content;
+.cartTotalContainer {
+   display: flex;
+   justify-content: flex-start;
+   width: 200px;
+   margin-left: 685px;
+   border: solid 1px;
+   padding: 30px; 
+   font-size: 1.2em;
 }
 
-.cartItemInfo {
-    display: flex;
-    align-items: center;
+
+.cartTitleQuantity {
+   margin-right:120px;
 }
 
-.cartInfoContainer img {
-    width: 100px;
-    height: auto;
-    margin-right: 20px;
+.cartItemInfos {
+   text-align: center;
+   padding: 20px;
 }
 
-.cartInfos {
-    flex: 1;
+.cartQuantityButtons {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
 }
 
-.quantityContainer {
-    display: flex;
-    align-items: center;
+.cartItemQuantity {
+   width: 40px;
+   text-align: center;
 }
 
-.quantityButtons button {
-    padding: 8px 12px;
-    margin: 0 5px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
+.cartQuantityButtons button {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   background-color: rgb(165, 153, 231); /* Couleur de fond du bouton */
+   border: none;
+   color: #fff; /* Couleur du texte */
+   font-size: 18px;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   margin: 10px;
 }
 
-.quantityButtons button:hover {
-    background-color: #0056b3;
+.cartButtonPurchase {
+   margin-left: 45%;
+   margin-top: 80px;
+   margin-bottom: 150px;
+   padding: 20px;
+   font-size: 1.2em;
+   cursor: pointer;
 }
 
-.totalContainer {
-    margin-top: 20px;
+@media screen and (max-width: 780px) {
+   .cartTitles {
+      display: none
+   }
+
+   .cartFlexContainer {
+      
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 300px;
+      background-color: #f8f8f8;
+      font-size: 20px;
+   }
+
+   .cartItemsContainer {
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: solid 1px white;
+   }
+
+   .cartQuantityButtons {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 0px;
+   }
+
+   .cartItemInfos {
+      text-align: center;
+      padding: 0px;;
+   }
+
+   .cartTotalContainer {
+      display: flex;
+      justify-content: flex-start;
+      width: 100px;
+      margin-left: 70px;
+      border: solid 1px;
+      padding: 30px; 
+      font-size: 26px;;
+   }
+
+
 }

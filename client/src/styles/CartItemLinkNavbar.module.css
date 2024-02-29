@@ -6,7 +6,8 @@
     align-items: center;
     font-size: 20px;
     padding-top: 10px;  /* le padding sert pour la hauteur du cart dans le header */
-    margin: 0px;
+    margin-left: 5px;
+    width: content;
   }
 
   .cartItem a {
@@ -39,15 +40,15 @@
   
 @media screen and (min-width: 780px) {
   .cartItem {
-    padding-top: 10px
+    padding-top: 12px
   }
 }
 
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 780px) {
   .cartItem {
-    padding-top: 10px;
-    margin-right: 5%;
+    padding-top: 20px;
+    
   }
 }
   

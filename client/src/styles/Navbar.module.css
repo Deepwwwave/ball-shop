@@ -4,6 +4,7 @@
   position: relative;
   width: 100%;
   height: auto;
+  text-align: baseline;
 }
 
 .spaceOverNav {
@@ -131,6 +132,26 @@
   bottom: 0;
   transform: rotate(-45deg);
   transition: bottom, transform 300ms;
+}
+
+@media screen and (max-width: 920px) {
+
+ 
+  .containerShowcaseLinks {
+    grid-column: 1 / 3;
+  }
+  
+  .containerSettingsLinks {
+    grid-column: 3 / 6;
+
+  }
+  .containerShowcaseLinks a{
+    font-size:1em
+  }
+  
+  .containerSettingsLinks a{
+    font-size:1em;
+  }
 }
 
 /*Transformation du menu pour petit écran*/

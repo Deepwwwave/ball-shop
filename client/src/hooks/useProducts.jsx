@@ -16,8 +16,6 @@ const useProducts = () => {
 
    const products = useSelector((state) => state.products.products);
 
-   const urlServer = import.meta.env.VITE_APP_LOCAL_URL_BACK;
-
    const getServerProducts = async () => {
       try {
          const res = await reqGetAllProducts();
@@ -52,7 +50,7 @@ const useProducts = () => {
    });
 
    console.log(products.length);
-   return { products, loading, error, urlServer };
+   return { products, loading, error, urlServer, dispatch };
 };
 
 export default useProducts;

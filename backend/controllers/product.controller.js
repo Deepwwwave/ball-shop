@@ -131,7 +131,7 @@ export const deleteProduct = async (req, res, next) => {
          msg: "product deleted",
          newToken: newToken,
       });
-      io.emit("productsUpdate", { msg: "Deleted !" });
+      io.emit("productsUpdated", { msg: "Deleted !" });
    } catch (error) {
       return next(error);
    }

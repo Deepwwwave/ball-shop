@@ -23,6 +23,8 @@
 
 
 
+
+
 @media screen and (min-width: 780px) {
    .mainContainer {
       justify-content: space-between;
@@ -34,6 +36,10 @@
    
  .titleContainer {
   margin-top: 10px;
+}
+
+.cart {
+  margin-left:
 }
 }
 

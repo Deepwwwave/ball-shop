@@ -9,6 +9,7 @@ const useCart = () => {
     const removeFromCart = (itemId) => dispatch(removeItem(itemId));
     const clearCartItems = () => dispatch(clearCart());
     const substractItemFromCart = (itemId) => dispatch(substractItemQuantity(itemId));
+    const updateCart = () => dispatch (updateItems());
 
     return {
         cartItems,
@@ -18,6 +19,7 @@ const useCart = () => {
         removeFromCart,
         clearCartItems,
         substractItemFromCart,
+        updateCart
     };
 };
 

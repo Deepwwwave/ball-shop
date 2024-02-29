@@ -34,7 +34,7 @@ export default function Navbar() {
                      <NavLink to="/">
                         <li className={styles.item} onClick={changeToggleNav}>
                            <p className={styles.spaceOverNav}></p>
-                           La chaussette en mohair
+                           La Ferme
                         </li>
                      </NavLink>
                      <NavLink to="boutique">
