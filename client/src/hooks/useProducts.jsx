@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { reqGetAllProducts } from "../api/request/product";
 import { loadProductsReducer } from "../store/slices/products";
+import useCart from "./useCart";
+
 
 const urlServer = import.meta.env.VITE_APP_LOCAL_URL_BACK
 const socket = io(urlServer); // Remplacez par votre URL de serveur socket.io
@@ -13,6 +15,7 @@ const useProducts = () => {
    const dispatch = useDispatch();
    const [loading, setLoading] = useState(true);
    const [error, setError] = useState(null);
+   const {updateCart} = useCart();
 
    const products = useSelector((state) => state.products.products);
 
@@ -20,6 +23,8 @@ const useProducts = () => {
       try {
          const res = await reqGetAllProducts();
          dispatch(loadProductsReducer(res.products));
+         updateCart(res.products)
+
       } catch (error) {
          console.error("Error loading products", error);
          setError(error.message);
@@ -43,14 +48,21 @@ const useProducts = () => {
    }, [products]);
 
    useEffect(() => {
-      socket.on("productsUpdated", (data) => {
-        console.log('Products updated:', data)
+      const handleProductsUpdated = (data) => {
+         console.log("Products updated:", data);
          getServerProducts();
-      });
-   });
+      };
+
+      socket.on("productsUpdated", handleProductsUpdated);
+
+      // Fonction de nettoyage pour retirer l'écouteur d'événement lorsque le composant est démonté
+      return () => {
+         socket.off("productsUpdated", handleProductsUpdated);
+      };
+   }, []);
 
    console.log(products.length);
-   return { products, loading, error, urlServer, dispatch };
+   return { products, loading, error, urlServer};
 };
 
 export default useProducts;

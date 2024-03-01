@@ -51,8 +51,8 @@
 .cartTotalContainer {
    display: flex;
    justify-content: flex-start;
-   width: 200px;
-   margin-left: 685px;
+   width: 170px;
+   margin-left: 665px;
    border: solid 1px;
    padding: 30px; 
    font-size: 1.2em;

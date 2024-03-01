@@ -1,31 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "../styles/Cart.module.css";
-import io from "socket.io-client"
 import useCart from "../hooks/useCart";
 import useProducts from "../hooks/useProducts";
-import { reqGetAllProducts } from "../api/request/product";
+
 
 export default function Cart() {
    const { cartItems, totalItems, totalPrice, addToCart, removeFromCart, updateCart, substractItemFromCart } = useCart();
-   const { urlServer, dispatch } = useProducts();
+   const { urlServer } = useProducts();
 
-   const socket = io(urlServer); // Remplacez par votre URL de serveur socket.io
 
-   const getProductsAndTchekCart = async () => {
-      try {
-         const res = await reqGetAllProducts()
-         dispatch(updateCart(res.products))
-      } catch (error) {
-         console.log('error', error)
-      }
-   }
-
-   useEffect(() => {
-      socket.on("productsUpdated", (data) => {
-        console.log('Products updated:', data)
-        getProductsAndTchekCart()
-      });
-   });
 
    return (
       <div className={styles.cartMainContainer}>

@@ -42,6 +42,7 @@ export default function Boutique() {
          {error && <p>Error: {error}</p>}
          {!loading && !error && (
             <section className={styles.boutiqueArticlesContainer}>
+               
                {products.map((product) => (
                   <article  key={product.id} className={styles.boutiqueArticleAndheartContainer}>
                      <FontAwesomeIcon onClick={() => (isProductInCart(product.id, cartItems) ? handleRemoveFromCart(product.id) : handleAddToCart(product))} title={isProductInCart(product.id, cartItems) ? "Retirer du pannier" : "Ajouter au pannier"} className={isProductInCart(product.id, cartItems) ? styles.addCartActived : styles.addCart} icon={faSquarePlus} /> {/* Button add cart */}
