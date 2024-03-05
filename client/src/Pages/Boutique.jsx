@@ -1,7 +1,7 @@
 // Boutique.js
 import React from "react";
 import styles from "../styles/Boutique.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 import MessageToast from "../Components/ui/MessageToast.jsx";
@@ -12,21 +12,20 @@ import { isProductInCart } from "../helpers/cartHelpers.js";
 import Article from "../Components/Article";
 
 export default function Boutique() {
-
    const { products, loading, error, urlServer } = useProducts();
    const { addToCart, removeFromCart, cartItems } = useCart();
 
-   const [message, setMessage] = useMessageToast()
+   const [message, setMessage] = useMessageToast();
 
    const handleAddToCart = (product) => {
       console.log("Adding product to cart:", product);
       addToCart(product);
-      setMessage("Ajouté au panier")
+      setMessage("Ajouté au panier");
    };
 
    const handleRemoveFromCart = (productId) => {
       removeFromCart(productId);
-      setMessage("Supprimé du panier")
+      setMessage("Supprimé du panier");
    };
 
    return (
@@ -34,7 +33,7 @@ export default function Boutique() {
          <section className={styles.boutiqueHeaders}>
             <br />
             <br />
-            <NavLink to="/cart" className={styles.boutiquePanierLink} >
+            <NavLink to="/cart" className={styles.boutiquePanierLink}>
                Voir le panier
             </NavLink>
          </section>
@@ -42,16 +41,19 @@ export default function Boutique() {
          {error && <p>Error: {error}</p>}
          {!loading && !error && (
             <section className={styles.boutiqueArticlesContainer}>
-               
                {products.map((product) => (
-                  <article  key={product.id} className={styles.boutiqueArticleAndheartContainer}>
+                  <article key={product.id} className={styles.boutiqueArticleAndheartContainer}>
                      <FontAwesomeIcon onClick={() => (isProductInCart(product.id, cartItems) ? handleRemoveFromCart(product.id) : handleAddToCart(product))} title={isProductInCart(product.id, cartItems) ? "Retirer du pannier" : "Ajouter au pannier"} className={isProductInCart(product.id, cartItems) ? styles.addCartActived : styles.addCart} icon={faSquarePlus} /> {/* Button add cart */}
-                     <Article key={product.id} product={product} urlServer={urlServer} />
+                     <Link to={`/boutique/${product.id}`}
+                           state={{product}}
+                           onClick={() => console.log("Produit envoyé :", product)}>
+                        <Article key={product.id} product={product} urlServer={urlServer} />
+                     </Link>
                   </article>
                ))}
             </section>
          )}
-         {message && <MessageToast content={message}/>}
+         {message && <MessageToast content={message} />}
       </main>
    );
 }

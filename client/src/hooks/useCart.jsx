@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem, removeItem, clearCart, substractItemQuantity, updateItems } from '../store/slices/cart'; // Importez les actions de votre slice de panier
 
+
 const useCart = () => {
     const dispatch = useDispatch();
     const { items: cartItems, totalItems, totalPrice } = useSelector(state => state.cart);

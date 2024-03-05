@@ -5,6 +5,10 @@
    min-height: 100%;
 }
 
+.cartMainContainer h3{
+   text-align: center;
+}
+
 .cartTitle {
    text-align: flex-start;
    margin: 100px;
@@ -36,7 +40,7 @@
 .cartTitles {
    display: flex;
    justify-content: flex-end;
-   width: 364px;
+   width: 230px;
    margin-left: 470px;
    padding: 30px;
    
@@ -45,6 +49,7 @@
 .cartItemsContainer {
    display: flex;
    justify-content: space-around;
+   align-items: center;
    border: solid 1px white;
 }
 
@@ -77,6 +82,11 @@
 .cartItemQuantity {
    width: 40px;
    text-align: center;
+}
+
+.cartDelete {
+   color: grey;
+   
 }
 
 .cartQuantityButtons button {

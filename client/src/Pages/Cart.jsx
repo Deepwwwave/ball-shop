@@ -1,23 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../styles/Cart.module.css";
 import useCart from "../hooks/useCart";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import useProducts from "../hooks/useProducts";
-
+import io from "socket.io-client";
 
 export default function Cart() {
-   const { cartItems, totalItems, totalPrice, addToCart, removeFromCart, updateCart, substractItemFromCart } = useCart();
-   const { urlServer } = useProducts();
+   const { cartItems, totalItems, totalPrice, addToCart, removeFromCart, substractItemFromCart } = useCart();
+   const { urlServer, getServerProducts } = useProducts();
 
+   const socket = io(urlServer); // Remplacez par votre URL de serveur socket.io
 
+   useEffect(() => {
+      const handleProductsUpdated = (data) => {
+         console.log("Products updated:", data);
+         getServerProducts();
+      };
+
+      // Signaler à l'utilisateur que le panier est ouvert
+      socket.emit("cartOpened");
+
+      socket.on("cartUpdated", handleProductsUpdated);
+
+      // Fonction de nettoyage pour retirer l'écouteur d'événement lorsque le composant est démonté
+      return () => {
+         socket.off("productsUpdated", handleProductsUpdated);
+      };
+   }, []);
 
    return (
       <div className={styles.cartMainContainer}>
          {totalItems !== 0 ? (
             <>
-               <h3 className={styles.cartTitle}>Votre Panier</h3>
+               <h3 className={styles.cartTitle}>Votre panier</h3>
                <div className={styles.cartFlexContainer}>
                   <section className={styles.cartTitles}>
-                     <div className={styles.cartTitleQuantity}>Quantité</div>
+                     <div className={styles.cartTitleQuantity}>Quantité:</div>
                   </section>
                   {cartItems.map((cartItem) => (
                      <section className={styles.cartItemsContainer} key={cartItem.id}>
@@ -31,6 +50,10 @@ export default function Cart() {
                            <button onClick={() => substractItemFromCart(cartItem.id)}>-</button>
                            <p className={styles.cartItemQuantity}> {cartItem.itemQuantity} </p>
                            <button onClick={() => addToCart(cartItem)}>+</button>
+                        </div>
+
+                        <div>
+                           <FontAwesomeIcon className={styles.cartDelete} icon={faTrash} onClick={() => removeFromCart(cartItem.id)} />
                         </div>
                      </section>
                   ))}

@@ -1,7 +1,13 @@
 /* VotreFichierDeStyles.module.css */
 
-.boutiqueMainContainer  {
+.boutiqueMainContainer {
    text-align: center;
+   padding-top: 30px;
+   padding-bottom: 30px;
+}
+.boutiqueMainContainer a {
+   text-decoration: none;
+   color: rgb(28, 27, 27);
 }
 
 .boutiqueArticlesContainer {
@@ -9,7 +15,6 @@
    flex-wrap: wrap;
    justify-content: center;
    gap: 20px;
-   padding: 20px;
 }
 
 .articlesContainer section {
@@ -22,16 +27,11 @@
    display: flex;
    align-items: start;
    flex-direction: column;
-   padding: 50px;
    margin-top: 20px;
 }
 
 .boutiquePanierLink {
-   text-decoration: underline;
-   margin-left: 77%;
-   font-size: 1.15em;
-   color: rgb(28, 27, 27);
-   cursor: pointer
+   display: none;
 }
 
 /* .boutiqueMainContainer h2 {
@@ -65,4 +65,14 @@
 .addCartActived:hover {
    color: hsl(0, 51%, 73%, 100%);
    cursor: pointer;
+}
+
+@media screen and (min-width: 780px) {
+   .boutiquePanierLink {
+      margin-left: 77%;
+      text-decoration: underline;
+      font-size: 1.15em;
+      color: rgb(28, 27, 27);
+      cursor: pointer;
+   }
 }

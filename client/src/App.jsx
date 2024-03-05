@@ -12,7 +12,7 @@ import ArticleDetail from "./Pages/ArticleDetail";
 import PageError from "./Pages/PageError";
 import Connexion from "./Pages/Connexion";
 import Deconnexion from "./Pages/Deconnexion";
-import Cart from "./Components/Cart"
+import Cart from "./Pages/Cart"
 import ValidateAccount from "./Pages/ValidateAccount";
 import ForgottenPassword from "./Pages/ForgottenPassword";
 import UpdatePassword from "./Pages/UpdatePassword";
@@ -55,9 +55,8 @@ function App() {
             <Routes>
                <Route index path="/" element={<LaChaussetteEnMohair />} />
 
-               <Route path="boutique" element={<Boutique />}>
-                  <Route path=":id" element={<ArticleDetail />} />
-               </Route>
+               <Route path="boutique" element={<Boutique />}/>
+               <Route path="boutique/:id" element={<ArticleDetail />} />
                <Route path="profil" element={<Profil />} />
 
                <Route path="admin" element={<Admin />} >

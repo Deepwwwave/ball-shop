@@ -115,7 +115,7 @@ export const addProduct = async (req, res, next) => {
          msg: "product added !",
          newToken: newToken,
       });
-      io.emit("productsUpdated", { msg: "Added !" });
+      io.emit("cartOpened", { msg: "Added !" });
    } catch (error) {
       return next(error);
    }
@@ -131,7 +131,7 @@ export const deleteProduct = async (req, res, next) => {
          msg: "product deleted",
          newToken: newToken,
       });
-      io.emit("productsUpdated", { msg: "Deleted !" });
+      io.emit("cartOpened", { msg: "Deleted !" });
    } catch (error) {
       return next(error);
    }
@@ -200,7 +200,7 @@ export const editProduct = async (req, res, next) => {
             msg: "product updated!",
             newToken: newToken,
          });
-         io.emit("productsUpdated", { msg: "Edited !" });
+         io.emit("cartOpened", { msg: "Edited !" });
       }
    } catch (error) {
       return next(error);

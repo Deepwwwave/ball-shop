@@ -1,0 +1,51 @@
+.articleDetailMainContainer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+.articleDetailProduct {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 90%;
+    margin-top:60px;
+    text-align: center;
+}
+
+.articleDetailCartLink {
+   display:none
+}
+
+.articleDetailInfos button{
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.articleDetailInfos button:active{
+    background-color:cadetblue;
+}
+
+.articleDetailDescription{
+    text-align:left;
+    padding: 100px;
+}
+
+@media screen and (min-width: 780px) {
+    .articleDetailProduct {
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        min-height: 100%;
+        margin-top: 100px;
+        margin-right:10%;
+        text-align: center;
+    }
+
+    .articleDetailCartLink {
+        text-decoration: underline;
+        margin-left: 77%;
+        font-size: 1.15em;
+        color: rgb(28, 27, 27);
+        cursor: pointer
+    }
+}

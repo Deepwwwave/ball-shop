@@ -13,7 +13,6 @@ export default function Article({ product, urlServer }) {
                <div className={styles.priceContainer}>
                   <p>{product.price} €</p>
                </div>
-               <p className={styles.productDescription}>{product.description}</p>
             </div>
          </section>
       </article>
