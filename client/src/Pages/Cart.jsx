@@ -7,17 +7,17 @@ import useProducts from "../hooks/useProducts";
 import io from "socket.io-client";
 
 export default function Cart() {
-   const { cartItems, totalItems, totalPrice, addToCart, removeFromCart, substractItemFromCart } = useCart();
+   const { cartItems, totalItems, totalCartPrice, addToCart, removeFromCart, substractItemFromCart } = useCart();
    const { urlServer, getServerProducts } = useProducts();
+   
+   const socket = io(urlServer); 
 
-   const socket = io(urlServer); // Remplacez par votre URL de serveur socket.io
 
    useEffect(() => {
       const handleProductsUpdated = (data) => {
          console.log("Products updated:", data);
          getServerProducts();
       };
-
       // Signaler à l'utilisateur que le panier est ouvert
       socket.emit("cartOpened");
 
@@ -43,7 +43,7 @@ export default function Cart() {
                         <div className={styles.cartItemInfos}>
                            <img src={`${urlServer}${cartItem.imageUrl}`} alt={cartItem.category} />
                            <p>{cartItem.category}</p>
-                           <p>{cartItem.price} €</p>
+                           <p>{cartItem.totalPrice} €</p>
                         </div>
 
                         <div className={styles.cartQuantityButtons}>
@@ -58,7 +58,7 @@ export default function Cart() {
                      </section>
                   ))}
                   <section className={styles.cartTotalContainer}>
-                     <div className={styles.cartTotalPrice}>Prix Total: {totalPrice} €</div>
+                     <div className={styles.cartTotalPrice}>Prix Total: {totalCartPrice} €</div>
                   </section>
                </div>
             </>

@@ -41,6 +41,7 @@ export const refreshToken = (req, res, next) => {
             const PAYLOAD = { uuid: decoded.uuid, role: decoded.role, exp: Math.floor(Date.now() / 1000) + 60 * 60 };
             req.newToken = jwt.sign(PAYLOAD, TOKEN_SECRET);
             req.role = decoded.role;
+            req.uuid = decoded.uuid;
             next();
          }
       });
@@ -51,8 +52,9 @@ export const refreshToken = (req, res, next) => {
 //( utilisé que au chargement du site pour retourné le nouveau token )
 export const renderToken = (req, res, next) => {
    const newToken = req.newToken;
-   const role = req.role
-   res.status(200).json({ status: 200, msg: "Token actualisé !", token: newToken, role: role });
+   const role = req.role;
+   const uuid = req.uuid;
+   res.status(200).json({ status: 200, msg: "Token actualisé !", token: newToken, role: role, uuid: uuid });
    next();
 };
 

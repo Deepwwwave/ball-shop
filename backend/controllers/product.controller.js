@@ -113,7 +113,7 @@ export const addProduct = async (req, res, next) => {
       res.status(201).json({
          status: 201,
          msg: "product added !",
-         newToken: newToken,
+         token : newToken,
       });
       io.emit("cartOpened", { msg: "Added !" });
    } catch (error) {
@@ -129,7 +129,7 @@ export const deleteProduct = async (req, res, next) => {
       res.status(200).json({
          status: 200,
          msg: "product deleted",
-         newToken: newToken,
+         token: newToken,
       });
       io.emit("cartOpened", { msg: "Deleted !" });
    } catch (error) {
@@ -189,7 +189,7 @@ export const editProduct = async (req, res, next) => {
             res.status(200).json({
                status: 200,
                msg: "product updated!",
-               newToken: newToken,
+               token: newToken,
             });
          });
       } else {
@@ -198,7 +198,7 @@ export const editProduct = async (req, res, next) => {
          res.status(200).json({
             status: 200,
             msg: "product updated!",
-            newToken: newToken,
+            token: newToken,
          });
          io.emit("cartOpened", { msg: "Edited !" });
       }

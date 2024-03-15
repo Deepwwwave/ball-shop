@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     isLogged : false,
     userRole: '',
+    userUuid: '',
 }
 
 const user = createSlice({
@@ -12,7 +13,8 @@ const user = createSlice({
         isConnected(state, action){
             
             state.isLogged = true;
-            state.userRole = action.payload
+            state.userRole = action.payload.userRole;
+            state.userUuid = action.payload.userUuid; 
             console.log(state.isLogged)
         }
     },

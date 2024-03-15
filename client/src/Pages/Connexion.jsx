@@ -31,7 +31,7 @@ export default function Connexion() {
             localStorage.setItem("token", res.token);
             localStorage.setItem('tokenSession', res.tokenSession);
             console.log(`%c Success!! signIn => status:${res.status} ~ ${res.msg}`, "color: green; font-weight: bold;");
-            dispatch(isConnected(res.role));
+            dispatch(isConnected({userRole: res.role, userUuid: res.uuid}));
             navigate("/");
          }
       } catch (error) {

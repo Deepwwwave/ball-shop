@@ -4,7 +4,7 @@ import { addItem, removeItem, clearCart, substractItemQuantity, updateItems } fr
 
 const useCart = () => {
     const dispatch = useDispatch();
-    const { items: cartItems, totalItems, totalPrice } = useSelector(state => state.cart);
+    const { items: cartItems, totalItems, totalCartPrice } = useSelector(state => state.cart);
 
     const addToCart = (item) => dispatch(addItem(item));
     const removeFromCart = (itemId) => dispatch(removeItem(itemId));
@@ -16,7 +16,7 @@ const useCart = () => {
     return {
         cartItems,
         totalItems,
-        totalPrice,
+        totalCartPrice,
         addToCart,
         removeFromCart,
         clearCartItems,

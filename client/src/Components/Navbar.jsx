@@ -10,6 +10,7 @@ export default function Navbar() {
    const [width, setWidth] = useState(window.innerWidth);
    const isLogged = useSelector((state) => state.user.isLogged);
    const userRole = useSelector((state) => state.user.userRole);
+   const userUuid = useSelector((state) => state.user.userUuid);
 
    const changeToggleNav = () => {
       setToggleNav(!toggleNav);
@@ -46,7 +47,7 @@ export default function Navbar() {
                </div>
                <div className={styles.containerSettingsLinks}>
                   <ul className={styles.liste}>
-                     { isLogged && <NavLink to="profil">
+                     { isLogged && <NavLink to={`profil/${userUuid}`}>
                         <li className={styles.item} onClick={changeToggleNav}>
                            Profil
                         </li>

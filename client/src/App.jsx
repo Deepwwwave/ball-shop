@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import styles from "./styles/App.module.css";
@@ -25,7 +25,6 @@ function App() {
    const dispatch = useDispatch();
    const tokenSession = localStorage.getItem("tokenSession");
    
-
    const checkSession = async () => {
       try {
          const res = await refreshToken(tokenSession);
@@ -34,8 +33,8 @@ function App() {
          } else {
             console.log(res.msg);
             console.log(res.token);
-            // localStorage.setItem("token", res.newToken);
-            dispatch(isConnected(res.role));
+            localStorage.setItem("token", res.newToken);
+            dispatch(isConnected({userRole: res.role, userUuid: res.uuid}));
          }
       } catch (error) {
          console.log("Error :", error);
@@ -45,7 +44,6 @@ function App() {
    useEffect(() => {
       checkSession(tokenSession);
    }, [tokenSession]);
-
   
 
    return (
@@ -57,7 +55,7 @@ function App() {
 
                <Route path="boutique" element={<Boutique />}/>
                <Route path="boutique/:id" element={<ArticleDetail />} />
-               <Route path="profil" element={<Profil />} />
+               <Route path={`profil/:uuid`} element={<Profil />} />
 
                <Route path="admin" element={<Admin />} >
                   <Route path="products" element={<AdminProducts />} /> 
