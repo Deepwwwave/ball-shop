@@ -7,7 +7,7 @@ const getInitialState = () => {
       : {
            items: [],
            totalItems: 0,
-           totalCartPrice: 0,
+           totalCartPrice: 4.95,
         };
 };
 
@@ -25,7 +25,7 @@ const cart = createSlice({
             state.items.push({ ...newItem, itemQuantity: 1, totalPrice: parseFloat(newItem.price) }); // Création d'une nouvelle propriété totalPrice pour l'article
          }
          state.totalItems += 1;
-         state.totalCartPrice = state.items.reduce((total, item) => total + item.totalPrice, 0); // Mise à jour du prix total en fonction des prix totaux de chaque produit
+         state.totalCartPrice = state.items.reduce((total, item) => total + item.totalPrice, 4.95); // Mise à jour du prix total en fonction des prix totaux de chaque produit
          localStorage.setItem("cart", JSON.stringify(state)); // Mise à jour du local storage
       },
       
@@ -44,7 +44,7 @@ const cart = createSlice({
       clearCart(state) {
          state.items = [];
          state.totalItems = 0;
-         state.totalCartPrice = 0;
+         state.totalCartPrice = 4.95;
          localStorage.removeItem("cart"); // Suppression des données du panier du local storage
       },
 
@@ -60,7 +60,7 @@ const cart = createSlice({
                state.items = state.items.filter((item) => item.id !== itemId);
             }
          }
-         state.totalCartPrice = state.items.reduce((total, item) => total + item.totalPrice, 0); // Mise à jour du prix total en fonction des prix totaux de chaque produit
+         state.totalCartPrice = state.items.reduce((total, item) => total + item.totalPrice, 4.95); // Mise à jour du prix total en fonction des prix totaux de chaque produit
          localStorage.setItem("cart", JSON.stringify(state)); // Mise à jour du local storage
       },
       
@@ -80,7 +80,7 @@ const cart = createSlice({
 
          // Mettre à jour state.totalItems et state.totalPrice en fonction des modifications
          state.totalItems = state.items.reduce((total, item) => total + item.itemQuantity, 0);
-         state.totalCartPrice = state.items.reduce((total, item) => total + item.totalPrice, 0);
+         state.totalCartPrice = state.items.reduce((total, item) => total + item.totalPrice, 4.95);
 
          localStorage.setItem("cart", JSON.stringify(state)); // Mise à jour du local storage
       },

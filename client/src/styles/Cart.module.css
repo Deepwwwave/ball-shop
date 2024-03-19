@@ -56,8 +56,8 @@
 .cartTotalContainer {
    display: flex;
    justify-content: flex-start;
-   width: 170px;
-   margin-left: 665px;
+   width: 200px;
+   margin-left: 640px;
    border: solid 1px;
    padding: 30px; 
    font-size: 1.2em;
@@ -71,6 +71,12 @@
 .cartItemInfos {
    text-align: center;
    padding: 20px;
+   text-decoration: none;
+   color: rgb(36, 34, 34);
+}
+
+.cartItemInfos a{
+   text-decoration: none;
 }
 
 .cartQuantityButtons {
@@ -103,6 +109,11 @@
    align-items: center;
    cursor: pointer;
    margin: 10px;
+}
+
+.cartLivraison {
+   text-align: right;
+   margin-right: 30px;
 }
 
 .cartButtonPurchase {

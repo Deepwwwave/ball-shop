@@ -5,7 +5,7 @@ import config from '../config';
 let backendUrl = config();
 
 
-export const refreshToken = async (tokenSession) => {
+export const refreshToken = async () => {
     try {
         const res = await axiosTokenHandler.get(`${backendUrl}/api/v1/customer/refreshToken`,{
     })
@@ -83,9 +83,9 @@ export const editUser = async (datas, uuid) => {
 
 
 //// A REVOIR POUR LES PARAMETRE A PASSER (voir avec le controller addOrder)
-export const addOrder = async (datas, datasDetail) => {
+export const reqAddOrder = async (datas) => {
     try {
-        const res = await axios.patch(`${backendUrl}/api/v1/customer/addOrder/${uuid}`, datas)
+        const res = await axios.post(`${backendUrl}/api/v1/customer/addOrder`, datas)
         return res.data
     } catch (error) {
         return error

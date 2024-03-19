@@ -1,72 +1,103 @@
 import Order from "../models/order.model.js";
+import Product from "../models/product.model.js";
+import stripe from "stripe";
 
+// Remember to switch to your live secret key in production.
+const stripeAPI = stripe("sk_test_51KZErmEc4VeEZWJYywEQn54NqY0M4xxEU2HGfQ5IHtC631ipHQxEuA3UiY3emX1x6qijo1cB4RagE728JGqUIu5E00rRwoeJ8V");
 
 export const addOrder = async (req, res, next) => {
-  console.log('addOrder controller', req.body);
-  const datas = {
-      userEmail : req.body.email,
-      totalPrice: 0,
-    }
-    const query1 = "INSERT INTO orders (`user_email`,`status`,`price`,`date`) VALUES (?,'not payed',?,NOW())";
-    const query2 = 'INSERT INTO orders_detail (order_id, product_id, quantity, price) VALUES (?, ?, ? ,?)';
-    const query3 = 'UPDATE orders SET price = ? WHERE id = ?';
-    try {
-        const resSaved = await Order.save(query1, datas);
-        const id = resSaved.insertId;
-        const datasUpdate = {
-            totalPrice: 0,
-            id : id,
-        }
-        req.body.cartItems.forEach(async(product)=>{
+   console.log("addOrder controller", req.body);
+   const { totalCartPrice, cartItems } = req.body;
+   const queryInsertOrder = "INSERT INTO orders (`user_email`,`status`,`total_price`,`date`) VALUES ('visiteur','not payed',?,NOW())";
+   const queryInsertOrderDetail = "INSERT INTO orders_detail (order_id, product_id, quantity, price) VALUES (?, ?, ? ,?)";
+   const queryUpdateOrder = "UPDATE orders SET price = ? WHERE id = ?";
+
+   try {
+      // Enregistrer la commande de base dans la base de données
+      const resSaved = await Order.save(queryInsertOrder, totalCartPrice);
+      const id = resSaved.insertId; // Récupérer l'ID de la commande nouvellement créée
+      const datasUpdate = {
+         totalPrice: 0,
+         id: id,
+      };
+
+      // Ajouter les produits à la commande et calculer le total
+      for (const product of cartItems) {
+         // Récupérer les détails du produit depuis la base de données
+         const productDetailsQuery = `SELECT * FROM product WHERE id = ?`;
+         const productDetails = await Product.getOne(productDetailsQuery, product.id);
+
+         // Vérifier si le produit existe et si son prix correspond au prix enregistré dans la base de données
+         if (productDetails && parseFloat(product.price) === parseFloat(productDetails.price)) {
             const totalPricePerProduct = parseInt(product.quantity) * parseFloat(product.price);
             const datasDetail = {
-                order_id: id,
-                product_id: product.productId,
-                quantity: product.quantity,
-                price: totalPricePerProduct,
-            }
-            await Order.save(query2, datasDetail);
-  
+               order_id: id,
+               product_id: product.id,
+               quantity: product.quantity,
+               price: totalPricePerProduct,
+            };
+
+            await Order.save(queryInsertOrderDetail, datasDetail);
             datasUpdate.totalPrice += totalPricePerProduct;
-            await Order.save(query3, datasUpdate);
-  
-            // Création du paiement Stripe
-            const paymentIntent = await stripe.paymentIntents.create({
-              amount: totalPricePerProduct * 100, // Convertir en cents
-              currency: "eur",
-              automatic_payment_methods: {
-                enabled: true,
-              },
-            });
-            // Envoi de la réponse avec le clientSecret du paiement
-            res.status(200).json({
-                status:200,
-                msg: "Order committed successfully",
-                clientSecret: paymentIntent.client_secret,
-            });
-        })
-    } catch (error) {
-        return next(error);
-    }  
+         } else {
+            // Si le produit n'existe pas ou si le prix ne correspond pas, retourner une erreur
+            return res.status(400).json({ error: "Le produit sélectionné n'existe pas ou le prix ne correspond pas à celui enregistré dans la base de données." });
+         }
+      }
+
+      // Mettre à jour le montant total de la commande dans la base de données
+      await Order.save(queryUpdateOrder, datasUpdate);
+
+      // Créer le paiement Stripe
+      const paymentIntent = await stripeAPI.paymentIntents.create({
+         amount: datasUpdate.totalPrice * 100, // Convertir en cents
+         currency: "eur",
+         automatic_payment_methods: {
+            enabled: true,
+         },
+      });
+
+      // Envoyer la réponse avec l'ID de la commande et le clientSecret du paiement
+      res.status(200).json({
+         status: 200,
+         msg: "Commande enregistrée avec succès",
+         orderId: id, // Retourner l'ID de la commande dans la réponse
+         clientSecret: paymentIntent.client_secret,
+      });
+   } catch (error) {
+      return next(error);
+   }
 };
 
+export const confirmPayment = async (req, res, next) => {
+   const { orderId } = req.body;
 
-export const getAllOrders =  async (req, res, next) => {
-  const newToken = req.newToken // nouveau token qui vient du middleware refreshToken situé sur la même route que ce contrôller
-  const query = `SELECT * FROM order`;
-     try {
-        const orders = await orders.getAll(query);
-        res.status(200).json({
-           status: 200,
-           msg: "orders retrieved !",
-           orders: orders,
-           newToken: newToken
-        });
-     } catch (error) {
-        return next(error);
-     }
-}
+   try {
+      // Mettre à jour le statut de la commande dans la base de données
+      const queryUpdateStatus = 'UPDATE orders SET status = "payed" WHERE id = ?';
+      await Order.save(queryUpdateStatus, [orderId]);
 
+      // Envoyer une réponse indiquant que la mise à jour a été effectuée avec succès
+      res.status(200).json({ message: "Payment confirmed and order status updated successfully" });
+   } catch (error) {
+      // Gérer les erreurs
+      console.error("Error confirming payment and updating order status:", error);
+      return next(error);
+   }
+};
 
-
-
+export const getAllOrders = async (req, res, next) => {
+   const newToken = req.newToken; // nouveau token qui vient du middleware refreshToken situé sur la même route que ce contrôller
+   const query = `SELECT * FROM order`;
+   try {
+      const orders = await orders.getAll(query);
+      res.status(200).json({
+         status: 200,
+         msg: "orders retrieved !",
+         orders: orders,
+         newToken: newToken,
+      });
+   } catch (error) {
+      return next(error);
+   }
+};

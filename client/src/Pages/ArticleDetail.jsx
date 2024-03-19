@@ -9,6 +9,9 @@ import useMessageToast from "../hooks/useMessageToast";
 export default function ArticleDetail() {
    const urlServer = import.meta.env.VITE_APP_LOCAL_URL_BACK;
    let { product } = useLocation().state;
+   let { cartItem } = useLocation().state;
+
+   let  article  = product || cartItem
    const { addToCart, cartItems } = useCart();
 
    const [message, setMesage] = useMessageToast();
@@ -18,7 +21,7 @@ export default function ArticleDetail() {
       setMesage("Article ajouté au panier");
    };
    // Vérifie si product est défini
-   if (!product) {
+   if (!product && !cartItem) {
       return <p>Produit non trouvé</p>;
    }
 
@@ -30,16 +33,16 @@ export default function ArticleDetail() {
          </NavLink>
          <section className={styles.articleDetailProduct}>
             <article className={styles.articleDetailInfos}>
-               <img src={`${urlServer}${product.imageUrl}`} alt={product.category} />
+               <img src={`${urlServer}${article.imageUrl}`} alt={article.category} />
                <div>
-                  <h3>{product.category}</h3>
-                  <p>{product.price} €</p>
-                  <button onClick={() => !isProductInCart(product.id, cartItems) && handleAddToCart(product)}>Ajouter au Panier</button>
+                  <h3>{article.category}</h3>
+                  <p>{article.price} €</p>
+                  <button onClick={() => !isProductInCart(article.id, cartItems) && handleAddToCart(article)}>Ajouter au Panier</button>
                </div>
             </article>
             <div className={styles.articleDetailDescription}>
                <p>Description : </p>
-               <p> {product.description}</p>
+               <p> {article.description}</p>
             </div>
             {message && <MessageToast content={message} />}
          </section>

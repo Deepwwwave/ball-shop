@@ -9,7 +9,6 @@ const config = () => {
   import.meta.env.MODE === 'development'
     ? backendUrl = VITE_APP_LOCAL_URL_BACK
     : backendUrl = VITE_APP_PRODUCTION_URL_BACK;
-
    return  backendUrl;
 };
 

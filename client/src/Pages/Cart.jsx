@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import styles from "../styles/Cart.module.css";
+import { Link, useNavigate } from "react-router-dom";
 import useCart from "../hooks/useCart";
+import { reqAddOrder } from "../api/request/customer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import useProducts from "../hooks/useProducts";
@@ -9,9 +11,30 @@ import io from "socket.io-client";
 export default function Cart() {
    const { cartItems, totalItems, totalCartPrice, addToCart, removeFromCart, substractItemFromCart } = useCart();
    const { urlServer, getServerProducts } = useProducts();
-   
-   const socket = io(urlServer); 
 
+   const navigate = useNavigate();
+   const socket = io(urlServer);
+
+   const datas = {
+      totalCartPrice,
+      cartItems
+   }
+
+   const redirectToPayment = async () => {
+      try {
+         const res = await reqAddOrder(datas);
+         if (res.response) {
+            const { status, msg } = res.response.data;
+            console.error(`Error order request => `, status, msg);
+         } else if (res.clientSecret) {
+            navigate("/payment", { state: { clientSecret: res.clientSecret } });
+         } else {
+            console.error("Client secret not found in response:", res);
+         }
+      } catch (error) {
+         console.error("Error:", error);
+      }
+   };
 
    useEffect(() => {
       const handleProductsUpdated = (data) => {
@@ -40,11 +63,11 @@ export default function Cart() {
                   </section>
                   {cartItems.map((cartItem) => (
                      <section className={styles.cartItemsContainer} key={cartItem.id}>
-                        <div className={styles.cartItemInfos}>
+                        <Link to={`/boutique/${cartItem.id}`} state={{ cartItem }} onClick={() => console.log("Produit envoyé :", cartItem)} className={styles.cartItemInfos}>
                            <img src={`${urlServer}${cartItem.imageUrl}`} alt={cartItem.category} />
                            <p>{cartItem.category}</p>
                            <p>{cartItem.totalPrice} €</p>
-                        </div>
+                        </Link>
 
                         <div className={styles.cartQuantityButtons}>
                            <button onClick={() => substractItemFromCart(cartItem.id)}>-</button>
@@ -57,8 +80,9 @@ export default function Cart() {
                         </div>
                      </section>
                   ))}
+                  <p className={styles.cartLivraison}>Livraison: 4.95€</p>
                   <section className={styles.cartTotalContainer}>
-                     <div className={styles.cartTotalPrice}>Prix Total: {totalCartPrice} €</div>
+                     <div className={styles.cartTotalPrice}>Prix Total: {totalCartPrice.toFixed(2)} €</div>
                   </section>
                </div>
             </>
@@ -66,7 +90,11 @@ export default function Cart() {
             <p className={styles.voidCart}> Votre pannier est vide </p>
          )}
 
-         {totalItems !== 0 && <button className={styles.cartButtonPurchase}> Valider ma commande </button>}
+         {totalItems !== 0 && (
+            <button className={styles.cartButtonPurchase} onClick={redirectToPayment}>
+               Valider ma commande
+            </button>
+         )}
       </div>
    );
 }
