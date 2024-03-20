@@ -3,37 +3,40 @@ import Product from "../models/product.model.js";
 import stripe from "stripe";
 
 // Remember to switch to your live secret key in production.
-const stripeAPI = stripe("sk_test_51KZErmEc4VeEZWJYywEQn54NqY0M4xxEU2HGfQ5IHtC631ipHQxEuA3UiY3emX1x6qijo1cB4RagE728JGqUIu5E00rRwoeJ8V");
+const stripeAPI = stripe(process.env.SECRET_STRIPE_KEY);
 
 export const addOrder = async (req, res, next) => {
    console.log("addOrder controller", req.body);
    const { totalCartPrice, cartItems } = req.body;
+   console.log(totalCartPrice)
    const queryInsertOrder = "INSERT INTO orders (`user_email`,`status`,`total_price`,`date`) VALUES ('visiteur','not payed',?,NOW())";
    const queryInsertOrderDetail = "INSERT INTO orders_detail (order_id, product_id, quantity, price) VALUES (?, ?, ? ,?)";
-   const queryUpdateOrder = "UPDATE orders SET price = ? WHERE id = ?";
-
+   const queryUpdateOrder = "UPDATE orders SET total_price = ? WHERE id = ?";
+   
    try {
       // Enregistrer la commande de base dans la base de données
-      const resSaved = await Order.save(queryInsertOrder, totalCartPrice);
-      const id = resSaved.insertId; // Récupérer l'ID de la commande nouvellement créée
+      const resSaved = await Order.save(queryInsertOrder, {totalCartPrice});
+      const orderId = resSaved.insertId; // Récupérer l'ID de la commande nouvellement créée
+      const shippingCost = 4.95
       const datasUpdate = {
-         totalPrice: 0,
-         id: id,
+         totalPrice: shippingCost,
+         id: orderId,
       };
 
       // Ajouter les produits à la commande et calculer le total
       for (const product of cartItems) {
          // Récupérer les détails du produit depuis la base de données
-         const productDetailsQuery = `SELECT * FROM product WHERE id = ?`;
-         const productDetails = await Product.getOne(productDetailsQuery, product.id);
+         const queryPriceProduct = `SELECT price FROM product WHERE id = ?`;
+         const price = await Product.getOne(queryPriceProduct, product.id);
+         console.log(price[0].price)
 
          // Vérifier si le produit existe et si son prix correspond au prix enregistré dans la base de données
-         if (productDetails && parseFloat(product.price) === parseFloat(productDetails.price)) {
-            const totalPricePerProduct = parseInt(product.quantity) * parseFloat(product.price);
+         if (price && parseFloat(product.price) === parseFloat(price[0].price)) {
+            const totalPricePerProduct = parseInt(product.itemQuantity) * parseFloat(product.price);
             const datasDetail = {
-               order_id: id,
+               order_id: orderId,
                product_id: product.id,
-               quantity: product.quantity,
+               quantity: product.itemQuantity,
                price: totalPricePerProduct,
             };
 
@@ -41,7 +44,7 @@ export const addOrder = async (req, res, next) => {
             datasUpdate.totalPrice += totalPricePerProduct;
          } else {
             // Si le produit n'existe pas ou si le prix ne correspond pas, retourner une erreur
-            return res.status(400).json({ error: "Le produit sélectionné n'existe pas ou le prix ne correspond pas à celui enregistré dans la base de données." });
+            return res.status(400).json({ msg: "Le produit sélectionné n'existe pas ou le prix ne correspond pas à celui enregistré dans la base de données." });
          }
       }
 
@@ -61,7 +64,7 @@ export const addOrder = async (req, res, next) => {
       res.status(200).json({
          status: 200,
          msg: "Commande enregistrée avec succès",
-         orderId: id, // Retourner l'ID de la commande dans la réponse
+         orderId: orderId, // Retourner l'ID de la commande dans la réponse
          clientSecret: paymentIntent.client_secret,
       });
    } catch (error) {
