@@ -12,8 +12,9 @@ import ArticleDetail from "./Pages/ArticleDetail";
 import PageError from "./Pages/PageError";
 import Connexion from "./Pages/Connexion";
 import Deconnexion from "./Pages/Deconnexion";
-import Cart from "./Pages/Cart"
-import Payment from "./Pages/Payment"
+import Cart from "./Pages/Cart";
+import Payment from "./Pages/Payment";
+import InvoicePDF from "./Pages/InvoicePDF";
 import ValidateAccount from "./Pages/ValidateAccount";
 import ForgottenPassword from "./Pages/ForgottenPassword";
 import UpdatePassword from "./Pages/UpdatePassword";
@@ -25,7 +26,7 @@ import { isConnected } from "./store/slices/user";
 function App() {
    const dispatch = useDispatch();
    const tokenSession = localStorage.getItem("tokenSession");
-   
+
    const checkSession = async () => {
       try {
          const res = await refreshToken(tokenSession);
@@ -35,7 +36,7 @@ function App() {
             console.log(res.msg);
             console.log(res.token);
             localStorage.setItem("token", res.newToken);
-            dispatch(isConnected({userRole: res.role, userUuid: res.uuid}));
+            dispatch(isConnected({ userRole: res.role, userUuid: res.uuid }));
          }
       } catch (error) {
          console.log("Error :", error);
@@ -45,7 +46,6 @@ function App() {
    useEffect(() => {
       checkSession(tokenSession);
    }, [tokenSession]);
-  
 
    return (
       <div className={styles.app}>
@@ -54,23 +54,24 @@ function App() {
             <Routes>
                <Route index path="/" element={<LaChaussetteEnMohair />} />
 
-               <Route path="boutique" element={<Boutique />}/>
+               <Route path="boutique" element={<Boutique />} />
                <Route path="boutique/:id" element={<ArticleDetail />} />
                <Route path={`profil/:uuid`} element={<Profil />} />
 
-               <Route path="admin" element={<Admin />} >
-                  <Route path="products" element={<AdminProducts />} /> 
-                  <Route path="orders" element={<OrdersAdmin />} /> 
+               <Route path="admin" element={<Admin />}>
+                  <Route path="products" element={<AdminProducts />} />
+                  <Route path="orders" element={<OrdersAdmin />} />
                </Route>
 
                <Route path="connexion" element={<Connexion />} />
                <Route path="deconnexion" element={<Deconnexion />} />
-               <Route path="cart" element={<Cart/>}/>
-               <Route path="payment" element={<Payment/>} />
+               <Route path="cart" element={<Cart />} />
+               <Route path="payment" element={<Payment />} />
                <Route path="validate-account/:uuid" element={<ValidateAccount />} />
                <Route path="forgotten-password" element={<ForgottenPassword />} />
-               <Route path="update-password/:uuid" element={<UpdatePassword />} />
 
+               <Route path="update-password/:uuid" element={<UpdatePassword />} />
+               <Route path="facturation" element={<InvoicePDF />} />
 
                <Route path="not-found" element={<PageError />} />
                <Route index path="*" element={<PageError />} />

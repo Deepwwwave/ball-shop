@@ -7,7 +7,6 @@ export default function Deconnexion() {
    const dispatch = useDispatch();
    const navigate = useNavigate();
 
-   
    const checkOut = () => {
       localStorage.removeItem("token");
       localStorage.removeItem("tokenSession");
@@ -16,16 +15,18 @@ export default function Deconnexion() {
    };
 
    const stay = () => {
-      navigate("/")
-   }
+      navigate("/");
+   };
 
    return (
-      <div className={styles.mainContainer}>
-         <h3>Se déconnecter ?</h3>
-         <div className={styles.buttonContainer}>
-            <button onClick={checkOut}>Oui</button>
-            <button onClick={stay}>Non</button>
+      <section className={styles.deconnexionMainContainer}>
+         <div className={styles.deconnexion}>
+            <p>Se déconnecter ?</p>
+            <div className={styles.buttonContainer}>
+               <button onClick={checkOut}>Oui</button>
+               <button onClick={stay}>Non</button>
+            </div>
          </div>
-      </div>
+      </section>
    );
 }

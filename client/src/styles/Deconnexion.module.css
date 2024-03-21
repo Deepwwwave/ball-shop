@@ -1,4 +1,9 @@
-.mainContainer {
+.deconnexionMainContainer {
+   min-height: 80%;
+   padding-top: 5%
+}
+
+.deconnexion {
    margin: 4em auto;
    display: flex;
    flex-direction: column;
@@ -10,6 +15,12 @@
    background-color: #f8f8f8; /* Couleur de fond douce */
    font-family: "Lobster", cursive; /* Police d'écriture similaire au header et au footer */
    padding: 20px 20px 60px 20px;
+   text-align: center;
+   
+}
+
+.deconnexion p {
+   text-align: center;
 }
 
 .buttonContainer {
@@ -26,5 +37,5 @@ button {
 }
 
 button:hover {
-    color: #0056b3;
-  }
+   color: #0056b3;
+}

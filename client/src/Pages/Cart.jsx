@@ -28,7 +28,7 @@ export default function Cart() {
             console.error(`Error order request => `, status, msg);
          } else if (res.clientSecret) {
             console.log(res.clientSecret)
-            navigate("/payment", { state: { clientSecret: res.clientSecret } });
+            navigate("/payment", { state: { clientSecret: res.clientSecret, totalPrice: res.totalPrice } });
          } else {
             console.error("Client secret not found in response:", res);
          }
