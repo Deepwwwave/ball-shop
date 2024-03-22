@@ -1,7 +1,10 @@
 /* footer.module.css */
 
 
-.container {
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #f8f8f8; /* Couleur de fond douce */
   padding: 20px;
   border-top: 2px solid #ddd; /* Séparation avec le contenu de la page */
@@ -9,6 +12,13 @@
   color: #333; /* Couleur du texte */
   font-family: 'Lobster', cursive; /* Police d'écriture */
   height:25%;
+}
+
+.footerContainer a{
+  margin: 50px;
+  color: #333; /* Couleur du texte */
+  font-family: 'Lobster', cursive; /* Police d'écriture */
+  
 }
 
 /* Ajoute d'autres styles selon tes besoins */

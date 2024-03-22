@@ -4,18 +4,19 @@ import config from "../../config/config";
 import { PaymentElement, AddressElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
 export default function CheckoutForm({ clientSecret, totalPrice }) {
-   let clientUrl = config()
+   let clientUrl = config();
    const stripe = useStripe();
    const elements = useElements();
-   console.log (clientSecret)
+   console.log(clientSecret);
 
    const [message, setMessage] = useState(null);
    const [isLoading, setIsLoading] = useState(false);
    const [adress, setAdress] = useState(null);
-
+   const [name, setName] = useState('');
 
    const handlePayment = () => {
       console.log(adress);
+      console.log(name);
    };
 
    useEffect(() => {
@@ -59,8 +60,11 @@ export default function CheckoutForm({ clientSecret, totalPrice }) {
       const { error } = await stripe.confirmPayment({
          elements,
          confirmParams: {
-            return_url: `${clientUrl}/facturation`,
+            return_url: `${clientUrl}`,
          },
+         billing_details: {
+            email: 'test@example.com',
+          }
       });
 
       if (error.type === "card_error" || error.type === "validation_error") {
@@ -84,11 +88,22 @@ export default function CheckoutForm({ clientSecret, totalPrice }) {
                onChange={(event) => {
                   if (event.complete) {
                      // Extract potentially complete address
+                     console.log(adress);
                      setAdress(event.value.address);
                   }
                }}
             />
-            <PaymentElement id="payment-element" options={paymentElementOptions} />
+            <PaymentElement
+               id="payment-element"
+               options={paymentElementOptions}
+               onChange={(event) => {
+                  if (event.complete) {
+                     // Assurez-vous que l'événement provient du champ de nom
+                     setName(document.getElementById("Field-nameInput").value);
+                     console.log(name);
+                  }
+               }}
+            />
             <p>Règlement: {totalPrice}€</p>
             <button onClick={handlePayment} className={styles.checkoutFormButton} disabled={isLoading || !stripe || !elements} id="submit">
                <span id="button-text">{isLoading ? <div className={styles.spinner} id="spinner"></div> : "Valider le paiement"}</span>

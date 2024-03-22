@@ -63,9 +63,9 @@ export const updatePassword = async (datas, uuid) => {
 }
 
 
-export const getOneUser = async (uuid) => {
+export const reqGetOneUser = async (uuid) => {
     try {
-        const res = await axiosTokenHandler.get(`${backendUrl}/api/v1/customer/${uuid}`)
+        const res = await axiosTokenHandler.get(`${backendUrl}/api/v1/customer/profil/${uuid}`)
         return res.data
     } catch (error) {
         return error

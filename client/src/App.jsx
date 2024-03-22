@@ -15,6 +15,8 @@ import Deconnexion from "./Pages/Deconnexion";
 import Cart from "./Pages/Cart";
 import Payment from "./Pages/Payment";
 import InvoicePDF from "./Pages/InvoicePDF";
+import CGV from "./Pages/CGV";
+import MentionsLegales from "./Pages/MentionsLegales";
 import ValidateAccount from "./Pages/ValidateAccount";
 import ForgottenPassword from "./Pages/ForgottenPassword";
 import UpdatePassword from "./Pages/UpdatePassword";
@@ -56,7 +58,7 @@ function App() {
 
                <Route path="boutique" element={<Boutique />} />
                <Route path="boutique/:id" element={<ArticleDetail />} />
-               <Route path={`profil/:uuid`} element={<Profil />} />
+               <Route path="profil" element={<Profil />} />
 
                <Route path="admin" element={<Admin />}>
                   <Route path="products" element={<AdminProducts />} />
@@ -72,6 +74,10 @@ function App() {
 
                <Route path="update-password/:uuid" element={<UpdatePassword />} />
                <Route path="facturation" element={<InvoicePDF />} />
+
+               <Route path="cgv" element={<CGV/>} />
+               <Route path="mentions-legales" element={<MentionsLegales/>} />
+
 
                <Route path="not-found" element={<PageError />} />
                <Route index path="*" element={<PageError />} />

@@ -47,7 +47,7 @@ export default function Navbar() {
                </div>
                <div className={styles.containerSettingsLinks}>
                   <ul className={styles.liste}>
-                     { isLogged && <NavLink to={`profil/${userUuid}`}>
+                     { isLogged && <NavLink to={`profil`}>
                         <li className={styles.item} onClick={changeToggleNav}>
                            Profil
                         </li>

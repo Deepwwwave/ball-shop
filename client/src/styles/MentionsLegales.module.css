@@ -1,0 +1,21 @@
+.mentionsLegalesContainer {
+   text-align: left;
+   margin: auto;
+   color: #333; /* Couleur du texte */
+   font-family: "Lobster", cursive; /* Police d'écriture */
+   width: 50%;
+   margin-top: 200px;
+   margin-bottom: 100px;
+}
+
+.mentionsLegalesContainer a {
+   color: #333; /* Couleur du texte */
+   font-family: "Lobster", cursive; /* Police d'écriture */
+}
+
+@media screen and (max-width: 500px) {
+   .mentionsLegalesContainer {
+      width: 1000%;
+      
+   }
+}

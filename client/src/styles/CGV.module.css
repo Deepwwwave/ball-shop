@@ -1,0 +1,21 @@
+.cgvContainer {
+   color: #333; /* Couleur du texte */
+   font-family: "Lobster", cursive; /* Police d'écriture */
+   text-align: left;
+   margin: auto;
+   margin-top: 200px;
+   margin-bottom: 100px;
+   width: 50%;
+}
+
+.cgvContainer a {
+   color: #333; /* Couleur du texte */
+   font-family: "Lobster", cursive; /* Police d'écriture */
+}
+
+@media screen and (max-width: 500px) {
+   .cgvContainer {
+      width: 100%;
+      
+   }
+}

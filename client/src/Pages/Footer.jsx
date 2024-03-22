@@ -1,8 +1,13 @@
-import React from 'react'
-import styles from '../styles/Footer.module.css'
+import React from 'react';
+import styles from '../styles/Footer.module.css';
+import { NavLink } from 'react-router-dom';
+
 
 export default function Footer() {
   return (
-    <div className={styles.container}>Footer</div>
+    <div className={styles.footerContainer}>
+      <NavLink to="/CGV">Conditions générales</NavLink>
+      <NavLink to="/mentions-legales">Mentions légales</NavLink>
+    </div>
   )
 }

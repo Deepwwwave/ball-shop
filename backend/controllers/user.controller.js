@@ -144,7 +144,7 @@ export const getOneUser = async (req, res, next) => {
    try {
       const newToken = req.newToken; // nouveau token qui vient du middleware refreshToken situé sur la même route que ce contrôller
       const user = await User.getOne(query, req.params.uuid);
-      res.status(200).json({ status: 200, msg: "user retrieved", user: user[0], newToken: newToken });
+      res.status(200).json({ status: 200, msg: "user retrieved", user: user[0], newToken: newToken, });
    } catch (error) {
       next(error);
    }
