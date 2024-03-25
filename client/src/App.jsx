@@ -21,7 +21,7 @@ import ValidateAccount from "./Pages/ValidateAccount";
 import ForgottenPassword from "./Pages/ForgottenPassword";
 import UpdatePassword from "./Pages/UpdatePassword";
 import AdminProducts from "./Components/AdminProducts";
-import OrdersAdmin from "./Components/OrdersAdmin";
+import AdminOrders from "./Components/AdminOrders";
 import { refreshToken } from "./api/request/customer";
 import { isConnected } from "./store/slices/user";
 
@@ -60,7 +60,7 @@ function App() {
 
                <Route path="admin" element={<Admin />}>
                   <Route path="products" element={<AdminProducts />} />
-                  <Route path="orders" element={<OrdersAdmin />} />
+                  <Route path="orders" element={<AdminOrders />} />
                </Route>
 
                <Route path="connexion" element={<Connexion />} />

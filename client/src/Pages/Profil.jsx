@@ -26,7 +26,13 @@ export default function Profil() {
 
    return (
       <section className={styles.profilContainer}>
-         <p>Profil: {email}</p>
+         <p><u>Profil:</u> {email}</p>
+         <br />
+         <br />
+         <br />
+         <u> Mes commandes:</u>
+         <img src="/images/maintenance.png" alt="maintenance" />
+         <i>Coming soon</i>
       </section>
    );
 }

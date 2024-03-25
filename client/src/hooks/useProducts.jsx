@@ -27,7 +27,7 @@ const useProducts = () => {
          setError(error.message);
       } finally {
          setLoading(false);
-         console.log("inside finally");
+         console.log("Product loaded");
       }
    };
 
