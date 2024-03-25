@@ -1,6 +1,8 @@
 .articleDetailMainContainer {
     padding-top: 30px;
     padding-bottom: 30px;
+    margin: auto;
+    min-height: 80%;
 }
 
 
@@ -17,27 +19,45 @@
    display:none
 }
 
+.articleDetailInfos img{
+    height: 150px;
+    width: 200px;
+    border-radius: 5px;
+}
 .articleDetailInfos button{
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    width: 150px;
 }
-.articleDetailInfos button:active{
-    background-color:cadetblue;
+.articleDetailInfos button:hover{
+    color: hsl(0, 51%, 73%, 100%);
+}
+
+.productInCart {
+    color: hsl(0, 51%, 73%, 100%);
+}
+
+.productInCart:hover {
+    color: grey;
 }
 
 .articleDetailDescription{
     text-align:left;
-    padding: 100px;
+    padding: 30px;
+    text-align: justify;
 }
 
-@media screen and (min-width: 780px) {
+@media screen and (min-width: 950px) {
+
+    .articleDetailMainContainer {
+        width: 40%;
+    }
+    
     .articleDetailProduct {
         display:flex;
         flex-direction: row;
         justify-content: center;
         min-height: 100%;
         margin-top: 100px;
-        margin-right:10%;
         text-align: center;
     }
 

@@ -1,0 +1,18 @@
+.messageToastContainer {
+    position: fixed;
+    top: 30%;
+    left: 25%;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 3
+}
+
+@media screen and (min-width: 780px) {
+    .messageToastContainer {
+        top: 10%;
+        left: 15%;
+    }
+}

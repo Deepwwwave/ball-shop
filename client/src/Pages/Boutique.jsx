@@ -3,7 +3,7 @@ import React from "react";
 import styles from "../styles/Boutique.module.css";
 import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
+import { faSquarePlus, faHeart } from "@fortawesome/free-solid-svg-icons";
 import MessageToast from "../Components/ui/MessageToast.jsx";
 import useMessageToast from "../hooks/useMessageToast.jsx";
 import useProducts from "../hooks/useProducts";
@@ -43,11 +43,11 @@ export default function Boutique() {
             <section className={styles.boutiqueArticlesContainer}>
                {products.map((product) => (
                   <article key={product.id} className={styles.boutiqueArticleAndheartContainer}>
-                     <FontAwesomeIcon onClick={() => (isProductInCart(product.id, cartItems) ? handleRemoveFromCart(product.id) : handleAddToCart(product))} title={isProductInCart(product.id, cartItems) ? "Retirer du pannier" : "Ajouter au pannier"} className={isProductInCart(product.id, cartItems) ? styles.addCartActived : styles.addCart} icon={faSquarePlus} /> {/* Button add cart */}
+                     <FontAwesomeIcon onClick={() => (isProductInCart(product.id, cartItems) ? handleRemoveFromCart(product.id) : handleAddToCart(product))} title={isProductInCart(product.id, cartItems) ? "Retirer du pannier" : "Ajouter au pannier"} className={isProductInCart(product.id, cartItems) ? styles.addCartActived : styles.addCart} icon={ isProductInCart(product.id, cartItems) ? faHeart : faSquarePlus} /> {/* Button add cart */}
                      <Link to={`/boutique/${product.id}`}
                            state={{product}}
                            onClick={() => console.log("Produit envoyé :", product)}>
-                        <Article key={product.id} product={product} urlServer={urlServer} />
+                        <Article key={product.id} product={product} urlServer={urlServer} loading={loading} />
                      </Link>
                   </article>
                ))}

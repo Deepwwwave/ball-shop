@@ -3,8 +3,8 @@ import Product from "../models/product.model.js";
 import stripe from "stripe";
 
 // Remember to switch to your live secret key in production.
-const stripeAPI = stripe('sk_test_51KZErmEc4VeEZWJYywEQn54NqY0M4xxEU2HGfQ5IHtC631ipHQxEuA3UiY3emX1x6qijo1cB4RagE728JGqUIu5E00rRwoeJ8V');
-// const stripeAPI = stripe(process.env.SECRET_STRIPE_KEY);
+// const stripeAPI = stripe('sk_test_51KZErmEc4VeEZWJYywEQn54NqY0M4xxEU2HGfQ5IHtC631ipHQxEuA3UiY3emX1x6qijo1cB4RagE728JGqUIu5E00rRwoeJ8V');
+const stripeAPI = stripe(process.env.SECRET_STRIPE_KEY);
 
 export const addOrder = async (req, res, next) => {
    console.log("addOrder controller", req.body);
@@ -60,7 +60,7 @@ export const addOrder = async (req, res, next) => {
             enabled: true,
          },
       });
-
+      console.log(paymentIntent.client_secret)
       // Envoyer la réponse avec l'ID de la commande et le clientSecret du paiement
       res.status(200).json({
          status: 200,
@@ -100,7 +100,7 @@ export const getAllOrders = async (req, res, next) => {
          status: 200,
          msg: "orders retrieved !",
          orders: orders,
-         newToken: newToken,
+         token: newToken,
       });
    } catch (error) {
       return next(error);

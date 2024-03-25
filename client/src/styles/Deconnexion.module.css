@@ -1,10 +1,10 @@
 .deconnexionMainContainer {
-   min-height: 80%;
-   padding-top: 5%
+   min-height: 60%;
+   padding: 10% 5% 0% 5%
 }
 
 .deconnexion {
-   margin: 4em auto;
+   margin: auto;
    display: flex;
    flex-direction: column;
    justify-content: space-around;
@@ -21,21 +21,25 @@
 
 .deconnexion p {
    text-align: center;
+   font-size: 1.1em;
+
 }
 
 .buttonContainer {
    display: flex;
    justify-content: space-around;
    margin-top: 20px;
+   padding: 20px;
 }
 
-button {
+.buttonContainer button {
    margin-bottom: 10px;
    padding: 10px 20px 10px 20px;
    border: 1px solid #ccc;
    border-radius: 3px;
 }
 
-button:hover {
-   color: #0056b3;
+.buttonContainer button:hover {
+   color: hsl(189, 51%, 73%);
+   cursor: pointer;
 }

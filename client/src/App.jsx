@@ -5,7 +5,7 @@ import styles from "./styles/App.module.css";
 import Header from "./Pages/Header";
 import Admin from "./Pages/Admin";
 import Boutique from "./Pages/Boutique";
-import LaChaussetteEnMohair from "./Pages/LaChaussetteEnMohair";
+import Home from "./Pages/Home";
 import Profil from "./Pages/Profil";
 import Footer from "./Pages/Footer";
 import ArticleDetail from "./Pages/ArticleDetail";
@@ -36,8 +36,6 @@ function App() {
             console.log(res.response.data);
          } else {
             console.log(res.msg);
-            console.log(res.token);
-            localStorage.setItem("token", res.newToken);
             dispatch(isConnected({ userRole: res.role, userUuid: res.uuid }));
          }
       } catch (error) {
@@ -54,7 +52,7 @@ function App() {
          <Header className={styles.header} />
          <div className={styles.pageContainer}>
             <Routes>
-               <Route index path="/" element={<LaChaussetteEnMohair />} />
+               <Route index path="/" element={<Home />} />
 
                <Route path="boutique" element={<Boutique />} />
                <Route path="boutique/:id" element={<ArticleDetail />} />

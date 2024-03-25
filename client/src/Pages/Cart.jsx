@@ -17,8 +17,8 @@ export default function Cart() {
 
    const datas = {
       totalCartPrice,
-      cartItems
-   }
+      cartItems,
+   };
 
    const redirectToPayment = async () => {
       try {
@@ -27,7 +27,7 @@ export default function Cart() {
             const { status, msg } = res.response.data;
             console.error(`Error order request => `, status, msg);
          } else if (res.clientSecret) {
-            console.log(res.clientSecret)
+            console.log(res.clientSecret);
             navigate("/payment", { state: { clientSecret: res.clientSecret, totalPrice: res.totalPrice } });
          } else {
             console.error("Client secret not found in response:", res);
@@ -77,7 +77,7 @@ export default function Cart() {
                         </div>
 
                         <div>
-                           <FontAwesomeIcon className={styles.cartDelete} icon={faTrash} onClick={() => removeFromCart(cartItem.id)} />
+                           <FontAwesomeIcon className={styles.cartDelete} icon={faTrash} onClick={() => removeFromCart(cartItem.id)} title="Supprimer" />
                         </div>
                      </section>
                   ))}
@@ -86,15 +86,12 @@ export default function Cart() {
                      <div className={styles.cartTotalPrice}>Prix Total: {totalCartPrice.toFixed(2)} €</div>
                   </section>
                </div>
+               <button className={styles.cartButtonPurchase} onClick={redirectToPayment}>
+                  Valider ma commande
+               </button>
             </>
          ) : (
-            <p className={styles.voidCart}> Votre pannier est vide </p>
-         )}
-
-         {totalItems !== 0 && (
-            <button className={styles.cartButtonPurchase} onClick={redirectToPayment}>
-               Valider ma commande
-            </button>
+            <p className={styles.voidCart}> Votre pannier est vide</p>
          )}
       </div>
    );

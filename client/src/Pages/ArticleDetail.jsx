@@ -1,6 +1,8 @@
 import React from "react";
 import { useLocation, NavLink } from "react-router-dom";
 import styles from "../styles/ArticleDetail.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import useCart from "../hooks/useCart";
 import { isProductInCart } from "../helpers/cartHelpers";
 import MessageToast from "../Components/ui/MessageToast";
@@ -12,13 +14,18 @@ export default function ArticleDetail() {
    let { cartItem } = useLocation().state;
 
    let  article  = product || cartItem
-   const { addToCart, cartItems } = useCart();
+   const { addToCart, cartItems, substractItemFromCart } = useCart();
 
    const [message, setMesage] = useMessageToast();
 
    const handleAddToCart = (product) => {
       addToCart(product);
       setMesage("Article ajouté au panier");
+   };
+
+   const HandleSubstractItemFromCart = (product) => {
+      substractItemFromCart(product);
+      setMesage("Supprimer du panier");
    };
    // Vérifie si product est défini
    if (!product && !cartItem) {
@@ -37,11 +44,17 @@ export default function ArticleDetail() {
                <div>
                   <h3>{article.category}</h3>
                   <p>{article.price} €</p>
-                  <button onClick={() => !isProductInCart(article.id, cartItems) && handleAddToCart(article)}>Ajouter au Panier</button>
+                  {
+                  !isProductInCart(article.id, cartItems) 
+                  ? 
+                   ( <button onClick={() => handleAddToCart(article)}>Ajouter au Panier</button> )
+                  : 
+                   ( <button className={styles.productInCart} onClick={() => HandleSubstractItemFromCart(article.id)}><FontAwesomeIcon icon={faHeart}/></button>)
+                  }
                </div>
             </article>
             <div className={styles.articleDetailDescription}>
-               <p>Description : </p>
+               <b>Description : </b>
                <p> {article.description}</p>
             </div>
             {message && <MessageToast content={message} />}

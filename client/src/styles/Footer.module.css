@@ -1,24 +1,30 @@
 /* footer.module.css */
 
-
 .footerContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f8f8f8; /* Couleur de fond douce */
-  padding: 20px;
-  border-top: 2px solid #ddd; /* Séparation avec le contenu de la page */
-  text-align: right;
-  color: #333; /* Couleur du texte */
-  font-family: 'Lobster', cursive; /* Police d'écriture */
-  height:25%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #f8f8f8; /* Couleur de fond douce */
+   padding: 20px;
+   border-top: 2px solid #ddd; /* Séparation avec le contenu de la page */
+   text-align: right;
+   color: #333; /* Couleur du texte */
+   height: 25%;
 }
 
-.footerContainer a{
-  margin: 50px;
-  color: #333; /* Couleur du texte */
-  font-family: 'Lobster', cursive; /* Police d'écriture */
-  
+.footerContainer a {
+   margin: 50px;
+   color: #333; /* Couleur du texte */
 }
 
-/* Ajoute d'autres styles selon tes besoins */
+@media screen and (max-width: 780px) {
+   .footerContainer {
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+   }
+
+   .footerContainer a {
+      margin: 10px;
+   }
+}

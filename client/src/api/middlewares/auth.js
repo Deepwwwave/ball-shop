@@ -36,7 +36,7 @@ axiosTokenHandler.interceptors.response.use(
    function (response) {
       const token = response.data.token; // format de la réponse
       if (token) {
-         console.log(response.data.token);
+         console.log(token);
          localStorage.setItem("token", token);
       }
       return response;

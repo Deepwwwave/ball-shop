@@ -133,7 +133,7 @@ export const getAllUsers = async (req, res, next) => {
    try {
       const newToken = req.newToken; // nouveau token qui vient du middleware refreshToken situé sur la même route que ce contrôller
       const users = await User.getAll(query);
-      res.status(200).json({ status: 200, msg: "Utilisateurs retrouvés", users: users, newToken: newToken });
+      res.status(200).json({ status: 200, msg: "Utilisateurs retrouvés", users: users, token: newToken });
    } catch (error) {
       next(error);
    }
@@ -144,7 +144,7 @@ export const getOneUser = async (req, res, next) => {
    try {
       const newToken = req.newToken; // nouveau token qui vient du middleware refreshToken situé sur la même route que ce contrôller
       const user = await User.getOne(query, req.params.uuid);
-      res.status(200).json({ status: 200, msg: "user retrieved", user: user[0], newToken: newToken, });
+      res.status(200).json({ status: 200, msg: "user retrieved", user: user[0], token: newToken, });
    } catch (error) {
       next(error);
    }
@@ -162,7 +162,7 @@ export const editUser = async (req, res, next) => {
    try {
       const newToken = req.newToken; // nouveau token qui vient du middleware refreshToken situé sur la même route que ce contrôller
       await User.save(query, datas);
-      res.status(200).json({ status: 200, msg: "Information mises à jour", newToken: newToken });
+      res.status(200).json({ status: 200, msg: "Information mises à jour", token: newToken });
    } catch (error) {
       console.error("Erreur", error);
       next(error);
