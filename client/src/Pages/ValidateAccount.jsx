@@ -30,7 +30,7 @@ export default function ValidateAccount() {
       <div className={styles.mainContainer}>
          <div className={styles.textContainer}>
             <h4>
-               La chaussette en mohair <br />
+               Ma pelote en mohair <br />
                <br />
                Bienvenue,
             </h4>

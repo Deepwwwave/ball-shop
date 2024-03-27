@@ -21,8 +21,8 @@ export default function MentionsLegales() {
         visite le Site objet des présentes conditions générales.
         <br />
         <b>Prestations et Services :</b>{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         met à disposition des Clients :
       </p>
@@ -34,8 +34,8 @@ export default function MentionsLegales() {
         <b>Informations clients :</b> Ci après dénommé « Information (s) » qui
         correspondent à l’ensemble des données personnelles susceptibles d’être
         détenues par{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         pour la gestion de votre compte, de la gestion de la relation client et
         à des fins d’analyses et de statistiques.
@@ -60,8 +60,8 @@ export default function MentionsLegales() {
         En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la
         confiance dans l'économie numérique, il est précisé aux utilisateurs du
         site internet{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         l'identité des différents intervenants dans le cadre de sa réalisation
         et de son suivi:
@@ -109,15 +109,15 @@ export default function MentionsLegales() {
       </p>
       <p>
         L’utilisation du site{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         implique l’acceptation pleine et entière des conditions générales
         d’utilisation ci-après décrites. Ces conditions d’utilisation sont
         susceptibles d’être modifiées ou complétées à tout moment, les
         utilisateurs du site{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         sont donc invités à les consulter de manière régulière.
       </p>
@@ -125,17 +125,17 @@ export default function MentionsLegales() {
         Ce site internet est normalement accessible à tout moment aux
         utilisateurs. Une interruption pour raison de maintenance technique peut
         être toutefois décidée par{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>
         , qui s’efforcera alors de communiquer préalablement aux utilisateurs
         les dates et heures de l’intervention. Le site web{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         est mis à jour régulièrement par{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         responsable. De la même façon, les mentions légales peuvent être
         modifiées à tout moment : elles s’imposent néanmoins à l’utilisateur qui
@@ -145,17 +145,17 @@ export default function MentionsLegales() {
       <h3>3. Description des services fournis.</h3>
       <p>
         Le site internet{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         a pour objet de fournir une information concernant l’ensemble des
         activités de la société.
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         s’efforce de fournir sur le site{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         des informations aussi précises que possible. Toutefois, il ne pourra
         être tenu responsable des oublis, des inexactitudes et des carences dans
@@ -164,13 +164,13 @@ export default function MentionsLegales() {
       </p>
       <p>
         Toutes les informations indiquées sur le site{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         sont données à titre indicatif, et sont susceptibles d’évoluer. Par
         ailleurs, les renseignements figurant sur le site{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         ne sont pas exhaustifs. Ils sont donnés sous réserve de modifications
         ayant été apportées depuis leur mise en ligne.
@@ -182,8 +182,8 @@ export default function MentionsLegales() {
         site. De plus, l’utilisateur du site s’engage à accéder au site en
         utilisant un matériel récent, ne contenant pas de virus et avec un
         navigateur de dernière génération mis-à-jour Le site{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         est hébergé chez un prestataire sur le territoire de l’Union Européenne
         conformément aux dispositions du Règlement Général sur la Protection des
@@ -200,8 +200,8 @@ export default function MentionsLegales() {
         réputé anormal.
       </p>
       <p>
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         et l’hébergeur ne pourront être tenus responsables en cas de
         dysfonctionnement du réseau Internet, des lignes téléphoniques ou du
@@ -210,8 +210,8 @@ export default function MentionsLegales() {
       </p>
       <h3>5. Propriété intellectuelle et contrefaçons.</h3>
       <p>
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         est propriétaire des droits de propriété intellectuelle et détient les
         droits d’usage sur tous les éléments accessibles sur le site internet,
@@ -220,8 +220,8 @@ export default function MentionsLegales() {
         adaptation de tout ou partie des éléments du site, quel que soit le
         moyen ou le procédé utilisé, est interdite, sauf autorisation écrite
         préalable de :{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>
         .
       </p>
@@ -233,49 +233,49 @@ export default function MentionsLegales() {
       </p>
       <h3>6. Limitations de responsabilité.</h3>
       <p>
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         agit en tant qu’éditeur du site.{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         est responsable de la qualité et de la véracité du Contenu qu’il publie.{" "}
       </p>
       <p>
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         ne pourra être tenu responsable des dommages directs et indirects causés
         au matériel de l’utilisateur, lors de l’accès au site internet{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>
         , et résultant soit de l’utilisation d’un matériel ne répondant pas aux
         spécifications indiquées au point 4, soit de l’apparition d’un bug ou
         d’une incompatibilité.
       </p>
       <p>
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         ne pourra également être tenu responsable des dommages indirects (tels
         par exemple qu’une perte de marché ou perte d’une chance) consécutifs à
         l’utilisation du site{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>
         . Des espaces interactifs (possibilité de poser des questions dans
         l’espace contact) sont à la disposition des utilisateurs.{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         se réserve le droit de supprimer, sans mise en demeure préalable, tout
         contenu déposé dans cet espace qui contreviendrait à la législation
         applicable en France, en particulier aux dispositions relatives à la
         protection des données. Le cas échéant,{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         se réserve également la possibilité de mettre en cause la responsabilité
         civile et/ou pénale de l’utilisateur, notamment en cas de message à
@@ -295,15 +295,15 @@ export default function MentionsLegales() {
         compte personnel de l’Utilisateur et de sa navigation sur le Site, le
         responsable du traitement des Données Personnelles est : Les quatre
         saisons.{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>
         est représenté par Bénédicte Morineau, son représentant légal
       </p>
       <p>
         En tant que responsable du traitement des données qu’il collecte,{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         s’engage à respecter le cadre des dispositions légales en vigueur. Il
         lui appartient notamment au Client d’établir les finalités de ses
@@ -311,25 +311,25 @@ export default function MentionsLegales() {
         de la collecte de leurs consentements, une information complète sur le
         traitement de leurs données personnelles et de maintenir un registre des
         traitements conforme à la réalité. Chaque fois que{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         traite des Données Personnelles,{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         prend toutes les mesures raisonnables pour s’assurer de l’exactitude et
         de la pertinence des Données Personnelles au regard des finalités pour
         lesquelles{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         les traite.
       </p>
       <h3>7.2 Finalité des données collectées</h3>
       <p>
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         est susceptible de traiter tout ou partie des données :{" "}
       </p>
@@ -354,8 +354,8 @@ export default function MentionsLegales() {
 
         <li>
           pour mener des enquêtes de satisfaction facultatives sur{" "}
-          <a href="https://www.mohairdesquatresaisons">
-            https://www.mohairdesquatresaisons
+          <a href="https://www.mapelotemohair.com">
+            https://www.mapelotemohair.com
           </a>{" "}
           : adresse email{" "}
         </li>
@@ -365,8 +365,8 @@ export default function MentionsLegales() {
         </li>
       </ul>
       <p>
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         ne commercialise pas vos données personnelles qui sont donc uniquement
         utilisées par nécessité ou à des fins statistiques et d’analyses.
@@ -375,8 +375,8 @@ export default function MentionsLegales() {
       <p>
         Conformément à la réglementation européenne en vigueur, les Utilisateurs
         de{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         disposent des droits suivants :{" "}
       </p>
@@ -413,8 +413,8 @@ export default function MentionsLegales() {
         <li>
           droit de définir le sort des données des Utilisateurs après leur mort
           et de choisir à qui{" "}
-          <a href="https://www.mohairdesquatresaisons">
-            https://www.mohairdesquatresaisons
+          <a href="https://www.mapelotemohair.com">
+            https://www.mapelotemohair.com
           </a>{" "}
           devra communiquer (ou non) ses données à un tiers qu’ils aura
           préalablement désigné
@@ -422,13 +422,13 @@ export default function MentionsLegales() {
       </ul>
       <p>
         Dès que{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         a connaissance du décès d’un Utilisateur et à défaut d’instructions de
         sa part,{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         s’engage à détruire ses données, sauf si leur conservation s’avère
         nécessaire à des fins probatoires ou pour répondre à une obligation
@@ -436,13 +436,13 @@ export default function MentionsLegales() {
       </p>
       <p>
         Si l’Utilisateur souhaite savoir comment{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         utilise ses Données Personnelles, demander à les rectifier ou s’oppose à
         leur traitement, l’Utilisateur peut contacter{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         par écrit à l’adresse suivante :{" "}
       </p>
@@ -451,8 +451,8 @@ export default function MentionsLegales() {
       <p>
         Dans ce cas, l’Utilisateur doit indiquer les Données Personnelles qu’il
         souhaiterait que{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         corrige, mette à jour ou supprime, en s’identifiant précisément avec une
         copie d’une pièce d’identité (carte d’identité ou passeport).{" "}
@@ -460,28 +460,28 @@ export default function MentionsLegales() {
       <p>
         Les demandes de suppression de Données Personnelles seront soumises aux
         obligations qui sont imposées à{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         par la loi, notamment en matière de conservation ou d’archivage des
         documents. Enfin, les Utilisateurs de{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         peuvent déposer une réclamation auprès des autorités de contrôle, et
         notamment de la CNIL (https://www.cnil.fr/fr/plaintes).
       </p>
       <h3>7.4 Non-communication des données personnelles</h3>
       <p>
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         s’interdit de traiter, héberger ou transférer les Informations
         collectées sur ses Clients vers un pays situé en dehors de l’Union
         européenne ou reconnu comme « non adéquat » par la Commission européenne
         sans en informer préalablement le client. Pour autant,{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         reste libre du choix de ses sous-traitants techniques et commerciaux à
         la condition qu’il présentent les garanties suffisantes au regard des
@@ -489,29 +489,29 @@ export default function MentionsLegales() {
         2016-679).
       </p>
       <p>
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         s’engage à prendre toutes les précautions nécessaires afin de préserver
         la sécurité des Informations et notamment qu’elles ne soient pas
         communiquées à des personnes non autorisées. Cependant, si un incident
         impactant l’intégrité ou la confidentialité des Informations du Client
         est portée à la connaissance de{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>
         , celle-ci devra dans les meilleurs délais informer le Client et lui
         communiquer les mesures de corrections prises. Par ailleurs{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         ne collecte aucune « données sensibles ».
       </p>
       <p>
         Les Données Personnelles de l’Utilisateur peuvent être traitées par des
         filiales de{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         et des sous-traitants (prestataires de services), exclusivement afin de
         réaliser les finalités de la présente politique.
@@ -520,8 +520,8 @@ export default function MentionsLegales() {
         Dans la limite de leurs attributions respectives et pour les finalités
         rappelées ci-dessus, les principales personnes susceptibles d’avoir
         accès aux données des Utilisateurs de{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         sont principalement les agents de notre service client.
       </p>
@@ -529,8 +529,8 @@ export default function MentionsLegales() {
         <h3>7.5 Types de données collectées</h3>
         <p>
           Concernant les utilisateurs d’un Site{" "}
-          <a href="https://www.mohairdesquatresaisons">
-            https://www.mohairdesquatresaisons
+          <a href="https://www.mapelotemohair.com">
+            https://www.mapelotemohair.com
           </a>
           , nous collectons les données suivantes qui sont indispensables au
           fonctionnement du service&nbsp;, et qui seront conservées pendant une
@@ -540,8 +540,8 @@ export default function MentionsLegales() {
           adresse postale nom prénom adresse mail
         </p>
         <p>
-          <a href="https://www.mohairdesquatresaisons">
-            https://www.mohairdesquatresaisons
+          <a href="https://www.mapelotemohair.com">
+            https://www.mapelotemohair.com
           </a>{" "}
           collecte en outre des informations qui permettent d’améliorer
           l’expérience utilisateur et de proposer des conseils
@@ -572,21 +572,21 @@ export default function MentionsLegales() {
       </p>
       <p>
         Aucune information personnelle de l'utilisateur du site{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         n'est publiée à l'insu de l'utilisateur, échangée, transférée, cédée ou
         vendue sur un support quelconque à des tiers. Seule l'hypothèse du
         rachat de{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         et de ses droits permettrait la transmission des dites informations à
         l'éventuel acquéreur qui serait à son tour tenu de la même obligation de
         conservation et de modification des données vis à vis de l'utilisateur
         du site{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>
         .
       </p>
@@ -594,16 +594,16 @@ export default function MentionsLegales() {
       <p>
         Pour assurer la sécurité et la confidentialité des Données Personnelles
         et des Données Personnelles de Santé,{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         utilise des réseaux protégés par des dispositifs standards tels que par
         pare-feu, la pseudonymisation, l’encryption et mot de passe.{" "}
       </p>
       <p>
         Lors du traitement des Données Personnelles,{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>
         prend toutes les mesures raisonnables visant à les protéger contre toute
         perte, utilisation détournée, accès non autorisé, divulgation,
@@ -612,17 +612,17 @@ export default function MentionsLegales() {
       <h3>9. Liens hypertextes « cookies » et balises (“tags”) internet</h3>
       <p>
         Le site{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         contient un certain nombre de liens hypertextes vers d’autres sites, mis
         en place avec l’autorisation de{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>
         . Cependant,{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         n’a pas la possibilité de vérifier le contenu des sites ainsi visités,
         et n’assumera en conséquence aucune responsabilité de ce fait.
@@ -645,14 +645,14 @@ export default function MentionsLegales() {
         de l’Utilisateur.
       </p>
       <p>
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         est susceptible de traiter les informations de l’Utilisateur concernant
         sa visite du Site, telles que les pages consultées, les recherches
         effectuées. Ces informations permettent à{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         d’améliorer le contenu du Site, de la navigation de l’Utilisateur.
       </p>
@@ -666,8 +666,8 @@ export default function MentionsLegales() {
         navigation de manière à ce que l’acceptation ou le refus des Cookies lui
         soient proposés ponctuellement, avant qu’un Cookie soit susceptible
         d’être enregistré dans son terminal.{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         informe l’Utilisateur que, dans ce cas, il se peut que les
         fonctionnalités de son logiciel de navigation ne soient pas toutes
@@ -679,8 +679,8 @@ export default function MentionsLegales() {
         enregistrés, l’Utilisateur est informé que sa navigation et son
         expérience sur le Site peuvent être limitées. Cela pourrait également
         être le cas lorsque{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         ou l’un de ses prestataires ne peut pas reconnaître, à des fins de
         compatibilité technique, le type de navigateur utilisé par le terminal,
@@ -689,19 +689,19 @@ export default function MentionsLegales() {
       </p>
       <p>
         Le cas échéant,{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         décline toute responsabilité pour les conséquences liées au
         fonctionnement dégradé du Site et des services éventuellement proposés
         par{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>
         , résultant (i) du refus de Cookies par l’Utilisateur (ii) de
         l’impossibilité pour{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         d’enregistrer ou de consulter les Cookies nécessaires à leur
         fonctionnement du fait du choix de l’Utilisateur. Pour la gestion des
@@ -713,8 +713,8 @@ export default function MentionsLegales() {
       <p>
         À tout moment, l’Utilisateur peut faire le choix d’exprimer et de
         modifier ses souhaits en matière de Cookies.{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         pourra en outre faire appel aux services de prestataires externes pour
         l’aider à recueillir et traiter les informations décrites dans cette
@@ -723,14 +723,14 @@ export default function MentionsLegales() {
       <p>
         Enfin, en cliquant sur les icônes dédiées aux réseaux sociaux Twitter,
         Facebook, Linkedin et Google Plus figurant sur le Site de{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         ou dans son application mobile et si l’Utilisateur a accepté le dépôt de
         cookies en poursuivant sa navigation sur le Site Internet ou
         l’application mobile de{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>
         , Twitter, Facebook, Linkedin et Google Plus peuvent également déposer
         des cookies sur vos terminaux (ordinateur, tablette, téléphone
@@ -740,20 +740,20 @@ export default function MentionsLegales() {
         Ces types de cookies ne sont déposés sur vos terminaux qu’à condition
         que vous y consentiez, en continuant votre navigation sur le Site
         Internet ou l’application mobile de{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>
         . À tout moment, l’Utilisateur peut néanmoins revenir sur son
         consentement à ce que{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         dépose ce type de cookies.
       </p>
       <h3>Article 9.2. BALISES (“TAGS”) INTERNET</h3>
       <p>
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         peut employer occasionnellement des balises Internet (également appelées
         « tags », ou balises d’action, GIF à un pixel, GIF transparents, GIF
@@ -769,8 +769,8 @@ export default function MentionsLegales() {
       </p>
       <p>
         Cette technologie permet à{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         d’évaluer les réponses des visiteurs face au Site et l’efficacité de ses
         actions (par exemple, le nombre de fois où une page est ouverte et les
@@ -781,8 +781,8 @@ export default function MentionsLegales() {
         Le prestataire externe pourra éventuellement recueillir des informations
         sur les visiteurs du Site et d’autres sites Internet grâce à ces
         balises, constituer des rapports sur l’activité du Site à l’attention de{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>
         , et fournir d’autres services relatifs à l’utilisation de celui-ci et
         d’Internet.
@@ -791,8 +791,8 @@ export default function MentionsLegales() {
       <h3>10. Droit applicable et attribution de juridiction.</h3>
       <p>
         Tout litige en relation avec l’utilisation du site{" "}
-        <a href="https://www.mohairdesquatresaisons">
-          https://www.mohairdesquatresaisons
+        <a href="https://www.mapelotemohair.com">
+          https://www.mapelotemohair.com
         </a>{" "}
         est soumis au droit français. En dehors des cas où la loi ne le permet
         pas, il est fait attribution exclusive de juridiction aux tribunaux

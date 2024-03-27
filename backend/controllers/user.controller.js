@@ -32,7 +32,7 @@ export const signUp = async (req, res, next) => {
          const TOKEN = jwt.sign(PAYLOAD, TOKEN_SECRET);
          console.log("Token JWT generated :", TOKEN);
          mailValidateAccount(req.body.email, "Validation du compte", "Bienvenue", "Encore une petite étape, cliquer sur le lien pour confirmer la validation du compte", user[0].uuid);
-         return res.status(200).json({ status: 200, msg: "Bienvenue, un e-mail de confirmation vous a été envoyé pour finaliser votre compte", token: TOKEN });
+         return res.status(200).json({ status: 200, msg: "Bienvenue, un e-mail de confirmation vous a été envoyé pour finaliser votre compte !", token: TOKEN });
       }
    } catch (error) {
       next(error);

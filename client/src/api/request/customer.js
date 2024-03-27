@@ -46,7 +46,7 @@ export const validateAccount = async (uuid) => {
 
 export const forgottenPassword = async (datas) => {
     try {
-        const res = await axios.post(`${backendUrl}/api/v1/customer/forgottenPassword`, datas)
+        const res = await axiosTokenHandler.post(`${backendUrl}/api/v1/customer/forgottenPassword`, datas)
         return res.data
     } catch (error) {
         return error

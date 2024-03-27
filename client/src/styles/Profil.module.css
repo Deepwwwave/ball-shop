@@ -11,3 +11,8 @@
     font-size: 1.1em;
     margin-bottom:50px;
 }
+
+.profilContainer img{
+    width: 300px;
+    height: 300px;
+}

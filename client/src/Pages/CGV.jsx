@@ -26,7 +26,7 @@ export default function CGV() {
       </a>
       <h2>
         Conditions générales de vente des produits vendus sur
-        www.mohairdesquatresaisons.com
+        www.mapelotemohair.com
       </h2>
       Date de dernière mise à jour en attente
       <h3>Article 1 - Objet</h3>
@@ -56,8 +56,8 @@ export default function CGV() {
       <h3>Article 3 - Commandes</h3>
       <b>Vous pouvez passer commande : </b>
       Sur Internet :{" "}
-      <a href="www.mohairdesquatresaisons.com">
-        www.mohairdesquatresaisons.com
+      <a href="www.mapelotemohair.com">
+        www.mapelotemohair.com
       </a>
       Les informations contractuelles sont présentées en langue française et
       feront l'objet d'une confirmation au plus tard au moment de la validation
@@ -68,8 +68,8 @@ export default function CGV() {
       commande reçue.
       <h3>Article 4 - Validation de votre commande</h3>
       Toute commande figurant sur le site Internet{" "}
-      <a href="www.mohairdesquatresaisons.com">
-        www.mohairdesquatresaisons.com
+      <a href="www.mapelotemohair.com">
+        www.mapelotemohair.com
       </a>{" "}
       suppose l'adhésion aux présentes Conditions Générales. Toute confirmation
       de commande entraîne votre adhésion pleine et entière aux présentes
@@ -127,8 +127,8 @@ export default function CGV() {
       du consommateur et renoncement exprès à son droit de rétractation. Article
       7- Disponibilité Nos produits sont proposés tant qu'ils sont visibles sur
       le site{" "}
-      <a href="www.mohairdesquatresaisons.com">
-        www.mohairdesquatresaisons.com
+      <a href="www.mapelotemohair.com">
+        www.mapelotemohair.com
       </a>{" "}
       et dans la limite des stocks disponibles. Pour les produits non stockés,
       nos offres sont valables sous réserve de disponibilité chez nos
@@ -136,8 +136,8 @@ export default function CGV() {
       commande, nous vous en informerons par mail. Votre commande sera
       automatiquement annulée et aucun débit bancaire ne sera effectué. En
       outre, le site Internet{" "}
-      <a href="www.mohairdesquatresaisons.com">
-        www.mohairdesquatresaisons.com
+      <a href="www.mapelotemohair.com">
+        www.mapelotemohair.com
       </a>{" "}
       n'a pas vocation à vendre ses produits en quantités importantes. Par
       conséquent la société <b>Les quatre saisons</b> se réserve le droit de
@@ -188,8 +188,8 @@ export default function CGV() {
       les tribunaux français seront les seuls compétents.
       <h3>Article 12 - Propriété intellectuelle</h3>
       Tous les éléments du site{" "}
-      <a href="www.mohairdesquatresaisons.com">
-        www.mohairdesquatresaisons.com
+      <a href="www.mapelotemohair.com">
+        www.mapelotemohair.com
       </a>{" "}
       sont et restent la propriété intellectuelle et exclusive de la société{" "}
       <b>Les quatre saisons</b>. Nul n'est autorisé à reproduire, exploiter,

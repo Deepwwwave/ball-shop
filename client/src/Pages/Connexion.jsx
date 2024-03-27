@@ -10,6 +10,7 @@ export default function Connexion() {
    const dispatch = useDispatch()
    const navigate = useNavigate()   
    
+   const [returnToHome, setReturnToHome] = useState(false);
    const [toggle, setToggle] = useState(false);
    const [message, setMessage] = useState();
    const [formData, setFormData] = useState({
@@ -67,6 +68,7 @@ export default function Connexion() {
             });
             localStorage.setItem('token', res.token);
             console.log(`%c Success!! signUp => status:${res.status} ~ ${res.msg}}`, "color: green; font-weight: bold;");
+            setReturnToHome(true)
          }
       } catch (error) {
          console.error("Error :", error);
@@ -79,6 +81,7 @@ export default function Connexion() {
 
    return (
       <main className={styles.mainConnexion}>
+         {returnToHome && (<NavLink to="/">Retour</NavLink>)}
          <h3>{ toggle ? "Créer un compte" : " Se connecter "}</h3>
          <form onSubmit={(e) => (toggle ? onSubmitSignUp(e) : onSubmitSignIn(e))} className={styles.form}>
             {message !== null && <p>{message}</p>}

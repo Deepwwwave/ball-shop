@@ -8,6 +8,6 @@ const limiter = (time, numberLimit) => rateLimit({
 	legacyHeaders: false, 
 })
 
-export const normalLimiter = limiter(60,100);
+export const normalLimiter = limiter(60,200);
 export const mediumLimiter = limiter(15,6);
 export const hardLimiter = limiter(30,3);

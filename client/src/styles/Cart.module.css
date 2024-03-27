@@ -111,7 +111,7 @@
    background-color: rgb(165, 153, 231); /* Couleur de fond du bouton */
    border: none;
    color: #fff; /* Couleur du texte */
-   font-size: 18px;
+   font-size: 25px;
    font-weight: bold;
    display: flex;
    justify-content: center;
@@ -128,7 +128,6 @@
 
 .cartButtonPurchase {
    margin: auto;
-
    padding: 20px;
    font-size: 1.2em;
    cursor: pointer;
