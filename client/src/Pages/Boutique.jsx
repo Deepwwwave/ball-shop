@@ -20,12 +20,12 @@ export default function Boutique() {
    const handleAddToCart = (product) => {
       console.log("Adding product to cart:", product);
       addToCart(product);
-      setMessage("Ajouté au panier");
+      setMessage("Ajouté");
    };
 
    const handleRemoveFromCart = (productId) => {
       removeFromCart(productId);
-      setMessage("Supprimé du panier");
+      setMessage("Supprimé");
    };
 
    return (

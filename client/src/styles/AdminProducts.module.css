@@ -79,6 +79,7 @@
 .articlesContainer {
    display: flex;
    flex-direction: column;
+   align-items: center;
    margin: 5px;
    background-color: #ddd;
    border-radius: 18px;
