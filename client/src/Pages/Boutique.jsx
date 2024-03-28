@@ -30,6 +30,7 @@ export default function Boutique() {
 
    return (
       <main className={styles.boutiqueMainContainer}>
+         <h2>Les pelotes</h2>
          <section className={styles.boutiqueHeaders}>
             <br />
             <br />

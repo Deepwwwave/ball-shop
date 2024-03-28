@@ -12,7 +12,7 @@ export default function CheckoutForm({ clientSecret, totalPrice }) {
    const [message, setMessage] = useState(null);
    const [isLoading, setIsLoading] = useState(false);
    const [adress, setAdress] = useState(null);
-   const [name, setName] = useState('');
+   const [name, setName] = useState("");
 
    const handlePayment = () => {
       console.log(adress);
@@ -63,8 +63,8 @@ export default function CheckoutForm({ clientSecret, totalPrice }) {
             return_url: `${clientUrl}`,
          },
          billing_details: {
-            email: 'test@example.com',
-          }
+            email: "test@example.com",
+         },
       });
 
       if (error.type === "card_error" || error.type === "validation_error") {
@@ -81,7 +81,20 @@ export default function CheckoutForm({ clientSecret, totalPrice }) {
    };
 
    return (
-      <div className={styles.checkoutFormContainer}>
+      <section className={styles.checkoutFormContainer}>
+            <u> Règlement </u>
+         <article>
+            <p>Ne rentrez pas vos véritables coordonnées bancaires.</p>
+            <p>
+               Vous devez utiliser le numéro de carte suivant &nbsp;
+               <span style={{ color: "crimson", textDecoration: "underline" }}>4242 4242 4242 4242</span>.
+            </p>
+            <p>En cliquant sur le bouton "Payer" vous allez effectuer une fausse transaction.</p>
+            <p>Vous êtes libre de choisir la date d'expiration et le code de sécurité de la carte.</p>
+            <p>Aucune de vos données bancaires ne seront enregistrées.</p>
+            <p>Une trace de la transaction sera tout de même conservée.</p>
+            <br />
+         </article>
          <form className={styles.form} id="payment-form" onSubmit={handleSubmit}>
             <AddressElement
                options={{ mode: "shipping" }}
@@ -110,6 +123,7 @@ export default function CheckoutForm({ clientSecret, totalPrice }) {
             </button>
             {message && <div id="payment-message">{message}</div>}
          </form>
-      </div>
+         <p>Merci pour votre participation.</p>
+      </section>
    );
 }

@@ -57,7 +57,7 @@ export default function Cart() {
       <div className={styles.cartMainContainer}>
          {totalItems !== 0 ? (
             <>
-               <h3 className={styles.cartTitle}>Votre panier</h3>
+               <h3 className={styles.cartTitle}>Mon panier</h3>
                <div className={styles.cartFlexContainer}>
                   <section className={styles.cartTitles}>
                      <div className={styles.cartTitleQuantity}>Quantité:</div>

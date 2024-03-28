@@ -7,6 +7,14 @@
    width: 60%;
    margin-bottom:150px;
 }
+
+.boutiqueMainContainer h2 {
+   font-weight: 100;
+   font-size: 30px;
+   text-align: center;
+   margin-top: 100px;
+}
+
 .boutiqueMainContainer a {
    text-decoration: none;
    color: rgb(28, 27, 27);

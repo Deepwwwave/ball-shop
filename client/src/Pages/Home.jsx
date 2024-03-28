@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 export default function Home() {
    return (
       <main className={styles.homeContainer}>
-        <h3>Le Mohaire</h3>
+        <h3>Le mohair</h3>
          <p>Découvrez la magie du mohair, une fibre naturelle d'excellence cultivée au cœur de notre ferme en Vendée, en France !</p>
 
          <img className={styles.homePelotesImg} src="images/pelotes.jpg" alt="pelotes" />

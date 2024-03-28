@@ -92,7 +92,7 @@ export const forgottenPassword = async (req, res, next) => {
    try {
       const user = await User.getOne(query, req.body.email);
       if (!user.length) {
-         return res.status(409).json({ status: 409, msg: "Auncun compte ne correspond a cet e-mail" });
+         return res.status(409).json({ status: 409, msg: "Auncun compte ne correspond à cet e-mail" });
       } else {
          mailForgottenPassword(req.body.email, "Réinitialisation du mot de passe", "cliquer sur le lien pour modifier votre mot de passe", "=D", user[0].uuid);
          const PAYLOAD = { uuid: user[0].uuid, role: user[0].role, exp: Math.floor(Date.now() / 1000) + 60 * 60 };
