@@ -59,5 +59,5 @@ app.use(router);
 app.use(errorHandler);
 
 server.listen(PORT, () => {
-   console.log(`Listening a http://localhost:${PORT}`);
+   console.log(`Listening on port: ${PORT}`);
 });

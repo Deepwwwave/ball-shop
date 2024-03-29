@@ -9,11 +9,20 @@ import MessageToast from "../Components/ui/MessageToast";
 import useMessageToast from "../hooks/useMessageToast";
 
 export default function ArticleDetail() {
-   const urlServer = import.meta.env.VITE_APP_LOCAL_URL_BACK;
+   let urlServer;
+
+   if (import.meta.env.VITE_APP_LOCAL_URL_BACK) {
+      // Utilise les variables d'environnement de Vite en développement
+      urlServer = import.meta.env.VITE_APP_LOCAL_URL_BACK;
+   } else {
+      // Utilise les variables d'environnement de Vercel en production
+      urlServer = process.env.VITE_APP_PRODUCTION_URL_BACK;
+   }
+   
    let { product } = useLocation().state;
    let { cartItem } = useLocation().state;
 
-   let  article  = product || cartItem
+   let article = product || cartItem;
    const { addToCart, cartItems, substractItemFromCart } = useCart();
 
    const [message, setMesage] = useMessageToast();
@@ -44,13 +53,13 @@ export default function ArticleDetail() {
                <div>
                   <h3>{article.category}</h3>
                   <p>{article.price} €</p>
-                  {
-                  !isProductInCart(article.id, cartItems) 
-                  ? 
-                   ( <button onClick={() => handleAddToCart(article)}>Ajouter au Panier</button> )
-                  : 
-                   ( <button className={styles.productInCart} onClick={() => HandleSubstractItemFromCart(article.id)}><FontAwesomeIcon icon={faHeart}/></button>)
-                  }
+                  {!isProductInCart(article.id, cartItems) ? (
+                     <button onClick={() => handleAddToCart(article)}>Ajouter au Panier</button>
+                  ) : (
+                     <button className={styles.productInCart} onClick={() => HandleSubstractItemFromCart(article.id)}>
+                        <FontAwesomeIcon icon={faHeart} />
+                     </button>
+                  )}
                </div>
             </article>
             <div className={styles.articleDetailDescription}>

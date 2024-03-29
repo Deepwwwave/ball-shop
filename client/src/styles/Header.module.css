@@ -1,5 +1,5 @@
 /* header.module.css */
-@import url("https://fonts.googleapis.com/css2?family=Bad+Script&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 
 .mainContainer {
    display: flex;
@@ -20,11 +20,19 @@
 }
 
 .titleContainer {
-   font-family: "Bad Script", cursive;
-   font-size: 1.1em;
+   font-size: 1.em;
    font-size: large;
-   color: rgb(46, 44, 44)
-   
+   color: rgb(46, 44, 44);
+}
+
+.titleContainer h1 {
+   font-family: "Dancing Script", cursive;
+   font-size: 2.1em;
+}
+
+.titleContainer img {
+   width: 20%;
+   height: 20%;
 }
 
 @media screen and (min-width: 780px) {

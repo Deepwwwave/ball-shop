@@ -4,10 +4,18 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { reqGetAllProducts } from "../api/request/product";
 import { loadProductsReducer } from "../store/slices/products";
-import useCart from "./useCart"
+import useCart from "./useCart";
 
 const useProducts = () => {
-   const urlServer = import.meta.env.VITE_APP_LOCAL_URL_BACK
+   let urlServer;
+
+   if (import.meta.env.VITE_APP_LOCAL_URL_BACK) {
+      // Utilise les variables d'environnement de Vite en développement
+      urlServer = import.meta.env.VITE_APP_LOCAL_URL_BACK;
+   } else {
+      // Utilise les variables d'environnement de Vercel en production
+      urlServer = process.env.VITE_APP_PRODUCTION_URL_BACK;
+   }
    const dispatch = useDispatch();
    const { updateCart } = useCart();
    const [loading, setLoading] = useState(true);
@@ -15,13 +23,11 @@ const useProducts = () => {
 
    const products = useSelector((state) => state.products.products);
 
-
    const getServerProducts = async () => {
       try {
          const res = await reqGetAllProducts();
          dispatch(loadProductsReducer(res.products));
-         updateCart(res.products)
-
+         updateCart(res.products);
       } catch (error) {
          console.error("Error loading products", error);
          setError(error.message);
@@ -44,9 +50,8 @@ const useProducts = () => {
       }
    }, [products]);
 
-
    console.log(products.length);
-   return { products, loading, error, urlServer, getServerProducts};
+   return { products, loading, error, urlServer, getServerProducts };
 };
 
 export default useProducts;

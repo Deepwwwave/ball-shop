@@ -11,7 +11,7 @@ export default function Header() {
             <h1 style={{ fontWeight: "lighter" }}>Ma pelote mohair</h1>
          </div>
          <div className={styles.bottomContainer}>
-            <Navbar className={styles.nav}/>
+            <Navbar className={styles.nav} />
             <CartItemLinkNavbar className={styles.cart} />
          </div>
       </div>

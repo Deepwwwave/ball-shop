@@ -1,7 +1,7 @@
 {
   "name": "api_back",
   "version": "1.0.0",
-  "description": "Site E-commerce, vente de chaussettes en mohair",
+  "description": "Site E-commerce, vente de pelote en mohair",
   "main": "server.js",
   "type": "module",
   "scripts": {

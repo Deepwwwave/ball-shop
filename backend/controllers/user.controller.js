@@ -4,7 +4,6 @@ import bcrypt from "bcrypt";
 import { saltRounds } from "../config/index.js";
 import jwt from "jsonwebtoken";
 import { mailValidateAccount, mailForgottenPassword } from "../mail/mailing.js";
-import "dotenv/config.js";
 
 const { TOKEN_SECRET, TOKEN_SECRET_SESSION, DOMAINE_SERVER, DOMAINE_CLIENT } = process.env;
 

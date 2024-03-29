@@ -11,6 +11,11 @@ export default defineConfig({
       localsConvention: "camelCase",
       generateScopedName: "[local]_[hash:base64:2]",
     }
-  }
+  },
+  build: {
+    minify: 'terser', // Minimiser les fichiers JS
+    sourcemap: false, // Désactiver la génération de sourcemap pour une meilleure performance
+    // Autres options de configuration de build...
+  },
 })
 
