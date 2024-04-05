@@ -74,7 +74,7 @@ export const signIn = async (req, res, next) => {
          console.log(new Date(PAYLOAD_SESSION.exp * 1000));
          const TOKEN_SESSION = jwt.sign(PAYLOAD_SESSION, TOKEN_SECRET_SESSION);
          console.log(TOKEN_SESSION);
-         return res.status(200).json({ status: 200, uuid: user[0].uuid, token: TOKEN, msg: "Bienvenue !", role: user[0].role, tokenSession: TOKEN_SESSION  });
+         return res.status(200).json({ status: 200, uuid: user[0].uuid, token: TOKEN, msg: "Bienvenue !", role: user[0].role, tokenSession: TOKEN_SESSION });
       } else {
          res.status(401).json({ status: 401, msg: "Email ou mot de passe incorrects." });
       }
@@ -83,10 +83,8 @@ export const signIn = async (req, res, next) => {
    }
 };
 
-
 export const forgottenPassword = async (req, res, next) => {
-   
-   console.log(req.body.email)
+   console.log(req.body.email);
    const query = "SELECT * from user WHERE email = ?";
    try {
       const user = await User.getOne(query, req.body.email);
@@ -143,7 +141,7 @@ export const getOneUser = async (req, res, next) => {
    try {
       const newToken = req.newToken; // nouveau token qui vient du middleware refreshToken situé sur la même route que ce contrôller
       const user = await User.getOne(query, req.params.uuid);
-      res.status(200).json({ status: 200, msg: "user retrieved", user: user[0], token: newToken, });
+      res.status(200).json({ status: 200, msg: "user retrieved", user: user[0], token: newToken });
    } catch (error) {
       next(error);
    }
@@ -168,63 +166,63 @@ export const editUser = async (req, res, next) => {
    }
 };
 
-      //******** VERSION DU SIGN_IN UTILISANT UN TOKEN DE SESSION AVEC UN COOKIE HTTP_ONLY ******************/
-      
-      // export const signIn = async (req, res, next) => {
-      //    const { email, password } = req.body;
-      //    const query = "SELECT * from user WHERE email = ?";
-      //    try {
-      //       const user = await User.getOne(query, email);
-      //       console.log(user);
-      //       if (!user.length) {
-      //          return res.status(404).json({ status: 404, msg: "Email ou mot de passe incorrects." });
-      //       }
-      //       if (user[0].validated !== "yes") {
-      //          return res.status(401).json({ status: 401, msg: "Votre compte a été créé, vous devez confirmé l'e-mail envoyé à votre adresse électronique" });
-      //       }
-      //       const match = await bcrypt.compare(password, user[0].password);
-      //       if (match) {
-      //          const PAYLOAD = { uuid: user[0].uuid, role: user[0].role, exp: Math.floor(Date.now() / 1000) + 60 * 60 };
-      //          const TOKEN = jwt.sign(PAYLOAD, TOKEN_SECRET);
-      //          const PAYLOAD_SESSION = { uuid: user[0].uuid, role: user[0].role, exp: Math.floor(Date.now() / 1000) + 7 * 24 * 60 * 60 };
-      //          console.log(PAYLOAD_SESSION.exp);
-      //          const TOKEN_SESSION = jwt.sign(PAYLOAD_SESSION, TOKEN_SECRET_SESSION);
-      //          if (process.env.NODE_ENV === "development") {
-      //             res.cookie("tokenSession", TOKEN_SESSION, {
-      //                // can only be accessed by server requests
-      //                httpOnly: true,
-      //                // path = where the cookie is valid
-      //                path: "/",
-      //                // domain = what domain the cookie is valid on
-      //                domain: "http://localhost:5173",
-      //                // secure = only send cookie over https
-      //                secure: false,
-      //                // sameSite = only send cookie if the request is coming from the same origin
-      //                sameSite: "lax", // "strict" | "lax" | "none" (secure must be true)
-      //                // maxAge = how long the cookie is valid for in milliseconds
-      //                maxAge: 7 * 24 * 60 * 60 * 1000, // Durée de validité du cookie en millisecondes
-      //             });
-      //          }
-      //          if (process.env.NODE_ENV === "production") {
-      //             res.cookie("tokenSession", TOKEN_SESSION, {
-      //                // can only be accessed by server requests
-      //                httpOnly: true,
-      //                // path = where the cookie is valid
-      //                path: "/",
-      //                // secure = only send cookie over https
-      //                secure: true,
-      //                // sameSite = only send cookie if the request is coming from the same origin
-      //                sameSite: "none", // "strict" | "lax" | "none" (secure must be true)
-      //                // maxAge = how long the cookie is valid for in milliseconds
-      //                maxAge: 7 * 24 * 60 * 60 * 1000, // Durée de validité du cookie en millisecondes
-      //             });
-      //          }
-      //          console.log(TOKEN_SESSION);
-      //          return res.status(200).json({ status: 200, uuid: user[0].uuid, token: TOKEN, msg: "Bienvenue !", email: user[0].email });
-      //       } else {
-      //          res.status(401).json({ status: 401, msg: "Email ou mot de passe incorrects." });
-      //       }
-      //    } catch (error) {
-      //       next(error);
-      //    }
-      // };
+//******** VERSION DU SIGN_IN UTILISANT UN TOKEN DE SESSION AVEC UN COOKIE HTTP_ONLY ******************/
+
+// export const signIn = async (req, res, next) => {
+//    const { email, password } = req.body;
+//    const query = "SELECT * from user WHERE email = ?";
+//    try {
+//       const user = await User.getOne(query, email);
+//       console.log(user);
+//       if (!user.length) {
+//          return res.status(404).json({ status: 404, msg: "Email ou mot de passe incorrects." });
+//       }
+//       if (user[0].validated !== "yes") {
+//          return res.status(401).json({ status: 401, msg: "Votre compte a été créé, vous devez confirmé l'e-mail envoyé à votre adresse électronique" });
+//       }
+//       const match = await bcrypt.compare(password, user[0].password);
+//       if (match) {
+//          const PAYLOAD = { uuid: user[0].uuid, role: user[0].role, exp: Math.floor(Date.now() / 1000) + 60 * 60 };
+//          const TOKEN = jwt.sign(PAYLOAD, TOKEN_SECRET);
+//          const PAYLOAD_SESSION = { uuid: user[0].uuid, role: user[0].role, exp: Math.floor(Date.now() / 1000) + 7 * 24 * 60 * 60 };
+//          console.log(PAYLOAD_SESSION.exp);
+//          const TOKEN_SESSION = jwt.sign(PAYLOAD_SESSION, TOKEN_SECRET_SESSION);
+//          if (process.env.NODE_ENV === "development") {
+//             res.cookie("tokenSession", TOKEN_SESSION, {
+//                // can only be accessed by server requests
+//                httpOnly: true,
+//                // path = where the cookie is valid
+//                path: "/",
+//                // domain = what domain the cookie is valid on
+//                domain: "http://localhost:5173",
+//                // secure = only send cookie over https
+//                secure: false,
+//                // sameSite = only send cookie if the request is coming from the same origin
+//                sameSite: "lax", // "strict" | "lax" | "none" (secure must be true)
+//                // maxAge = how long the cookie is valid for in milliseconds
+//                maxAge: 7 * 24 * 60 * 60 * 1000, // Durée de validité du cookie en millisecondes
+//             });
+//          }
+//          if (process.env.NODE_ENV === "production") {
+//             res.cookie("tokenSession", TOKEN_SESSION, {
+//                // can only be accessed by server requests
+//                httpOnly: true,
+//                // path = where the cookie is valid
+//                path: "/",
+//                // secure = only send cookie over https
+//                secure: true,
+//                // sameSite = only send cookie if the request is coming from the same origin
+//                sameSite: "none", // "strict" | "lax" | "none" (secure must be true)
+//                // maxAge = how long the cookie is valid for in milliseconds
+//                maxAge: 7 * 24 * 60 * 60 * 1000, // Durée de validité du cookie en millisecondes
+//             });
+//          }
+//          console.log(TOKEN_SESSION);
+//          return res.status(200).json({ status: 200, uuid: user[0].uuid, token: TOKEN, msg: "Bienvenue !", email: user[0].email });
+//       } else {
+//          res.status(401).json({ status: 401, msg: "Email ou mot de passe incorrects." });
+//       }
+//    } catch (error) {
+//       next(error);
+//    }
+// };

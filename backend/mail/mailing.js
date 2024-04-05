@@ -1,6 +1,8 @@
 import nodemailer from "nodemailer";
 
-const { DOMAINE_CLIENT, SERVICE_MAIL, USER_MAIL, APP_PASSWORD_MAIL } = process.env;
+const { DOMAIN_CLIENT, SERVICE_MAIL, USER_MAIL, APP_PASSWORD_MAIL } = process.env;
+
+let domainClient = DOMAIN_CLIENT || process.env.VERCEL_URL || 'http://localhost:5173'
 
 // MAIL D'ENVOI POUR VALIDATION DU COMPTE
 export const mailValidateAccount = (mailTo, subject, title, text, uuid) => {
@@ -17,7 +19,7 @@ export const mailValidateAccount = (mailTo, subject, title, text, uuid) => {
       to: mailTo,
       subject: subject,
       text: "",
-      html: `<b>${title}</b><p>${text}<p><a href='${DOMAINE_CLIENT}/validate-account/${uuid}'>Valider mon compte</a>`,
+      html: `<b>${title}</b><p>${text}<p><a href='${domainClient}/validate-account/${uuid}'>Valider mon compte</a>`,
    };
 
    transporter.sendMail(mailOptions, (error, info) => {
@@ -45,7 +47,7 @@ export const mailForgottenPassword = (mailTo, subject, title, text, uuid) => {
       to: mailTo,
       subject: subject,
       text: `Cliquez sur le lien suivant pour réinitialiser votre mot de passe`,
-      html: `<b>${title}</b><p>${text}<p><a href='${DOMAINE_CLIENT}/update-password/${uuid}'>Réinitialiser mon mot de passe</a>`,
+      html: `<b>${title}</b><p>${text}<p><a href='${domainClient}/update-password/${uuid}'>Réinitialiser mon mot de passe</a>`,
    };
 
    transporter.sendMail(mailOptions, (error, info) => {

@@ -32,5 +32,9 @@
     "stripe": "^14.19.0",
     "url": "^0.11.3",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-eslint": "^9.0.0"
   }
 }
