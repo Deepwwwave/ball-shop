@@ -43,22 +43,24 @@ export default function Connexion() {
    // SIGN_UP //
    const onSubmitSignUp = async (e) => {
       e.preventDefault();
-      try {
-         const res = await signUp(formData);
-         if (res.response) {
-            const { status, msg } = res.response.data;
+      if(formData.email !== ''){
+
+         try {
+            const res = await signUp(formData);
+            if (res.response) {
+            const { status, msg} = res.response.data;
             switch (status) {
                case 400:
-                  setMessage("Email ou mot de passe incorrects");
+                  setMessage(msg);
                   break;
-               case 401:
-               case 404:
-               case 409:
+                  case 401:
+                     case 404:
+                        case 409:
                   setMessage(msg);
                   break;
                default:
                   break;
-            }
+               }
             console.error(`Error signUp: status => `, status, msg);
          } else {
             setMessage(res.msg);
@@ -73,6 +75,9 @@ export default function Connexion() {
       } catch (error) {
          console.error("Error :", error);
       }
+   } else {
+      setMessage("Tous les champs doivent être remplis.")
+   }
    };
 
    const changeToggle = () => {

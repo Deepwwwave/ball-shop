@@ -1,35 +1,36 @@
 .homeContainer {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-    font-size: 1.1em;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    text-align: justify;
+   width: 60%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: auto;
+   font-size: 1.1em;
+   padding-top: 100px;
+   padding-bottom: 100px;
+   text-align: justify;
 }
 
 .homeContainer h2 {
-    font-weight: 100;
-    font-size: 30px;
-    color: #424A76;
+   font-weight: 100;
+   font-size: 30px;
+   color: #424a76;
 }
 
-.homeContainer p{
-  width: 70%
+.homeContainer p {
+   width: 70%;
 }
 
 .homePelotesImg {
-    transform: rotate(90deg);
-    border-radius:5px;
-    width: 40%;
-    height: 40%;
-    text-align: center;
+   transform: rotate(90deg);
+   border-radius: 5px;
+   width: 30%;
+   height: 30%;
+   text-align: center;
 }
 
 @media screen and (max-width: 950px) {
-    .homeContainer, .homeContainer p {
-        width: 90%;
-    }
+   .homeContainer,
+   .homeContainer p {
+      width: 90%;
+   }
 }

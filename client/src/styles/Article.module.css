@@ -1,41 +1,60 @@
 body {
-    margin: 0;
-    padding: 0;
-  }
+   margin: 0;
+   padding: 0;
+}
 
-  .productArticle {
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    border-radius:  5px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
-    width: 250px;
-    margin: 10px;
-    
- }
+.productArticle {
+   background-color: #f8f8f8;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   overflow: hidden;
+   transition: transform 0.3s ease-in-out;
+   cursor: pointer;
+   width: 250px;
+   margin: 10px;
+}
 
- .productImage {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ddd;
-  border-radius: 5px;
+.productImageHidden {
+   display: none;
+}
+
+.productImageSoon {
+   border: 8px solid #f3f3f3; /* Couleur du bord */
+   border-top: 5px solid #b3bbc0; /* Couleur de la partie supérieure */
+   border-radius: 50%; /* Pour faire un cercle */
+   width: 30px;
+   height: 30px;
+   animation: spin 2.5s linear infinite; /* Animation */
+   margin:auto;
+   margin-top: 10px;
+}
+
+@keyframes spin {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   } /* Faire tourner le cercle de 360 degrés */
+}
+
+.productImageVisible {
+   width: 100%;
+   height: auto;
+   border-bottom: 1px solid #ddd;
+   border-radius: 5px;
 }
 
 .productInfo {
-  text-align: center;
-  
+   text-align: center;
 }
 
 .priceContainer {
-  display: flex;
-  justify-content: center;
-  
+   display: flex;
+   justify-content: center;
 }
 
 .productDescription {
-  color: #666;
-  text-align: center;
+   color: #666;
+   text-align: center;
 }
-
-

@@ -73,13 +73,13 @@ function App() {
                <Route path="update-password/:uuid" element={<UpdatePassword />} />
                <Route path="facturation" element={<InvoicePDF />} />
 
-               <Route path="cgv" element={<CGV/>} />
-               <Route path="mentions-legales" element={<MentionsLegales/>} />
-
+               <Route path="cgv" element={<CGV />} />
+               <Route path="mentions-legales" element={<MentionsLegales />} />
 
                <Route path="not-found" element={<PageError />} />
                <Route index path="*" element={<PageError />} />
             </Routes>
+
             <Footer />
          </div>
       </div>

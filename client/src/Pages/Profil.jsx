@@ -31,7 +31,7 @@ export default function Profil() {
          <br />
          <br />
          <u> Mes commandes:</u>
-         <img src="/images/maintenance.png" alt="maintenance" />
+         <img src="/images/maintenance_en_cours.png" alt="maintenance" />
          <i>Coming soon</i>
       </section>
    );

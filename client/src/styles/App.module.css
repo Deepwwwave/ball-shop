@@ -17,6 +17,28 @@
     margin: 0;
     transition: opacity 1s ease-in-out; /* Animation de transition */
   }
+
+  /* .backgroundImgTop {
+    background-image: url(/public/images/bg-pelotes-couleurs.jpg);
+    background-attachment: fixed;
+    height: 200px;
+    background-size: 50%;
+    background-position-y:top;
+    border-top: 0.5px #424A76 solid;
+    border-bottom: 0.5px #424A76 solid;
+    opacity: 0.9;
+  }
+
+  .backgroundImgBottom{
+    background-image: url(/public/images/bg-pelotes-couleurs.jpg);
+    background-attachment: fixed;
+    height: 200px;
+    background-size: 50%;
+    background-position-y:bottom;
+    border-bottom: 0.5px #424A76 solid;
+    border-top: 0.5px #424A76 solid;
+    opacity: 0.9;
+  } */
   
   body.fade-out {
     opacity: 0; /* La page devient transparente */
@@ -45,4 +67,11 @@
       --header-height: 18vh;
       --pagContainer-height: 82vh;
     }
+  }
+
+  @media screen and (max-width: 780px) {
+    .backgroundImgTop, .backgroundImgBottom {
+      background-size: auto 50%;
+      height: 100px;
+    } 
   }

@@ -24,7 +24,6 @@
 .mainConnexion form {
    display: flex;
    flex-direction: column;
-   
 }
 
 .mainConnexion input {
@@ -37,6 +36,10 @@
 
 .button {
    margin-bottom: 15px;
+}
+
+.button:hover {
+   cursor:pointer
 }
 
 .mainConnexion p {
@@ -53,10 +56,10 @@
    color: hsl(0, 90%, 73%, 100%);
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 420px) {
    .mainConnexion {
-      margin-left: 5px;
-      margin-right: 5px;
+      margin-left: 20px;
+      margin-right: 20px;
       
    }
 }

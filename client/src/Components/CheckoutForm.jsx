@@ -83,7 +83,7 @@ export default function CheckoutForm({ clientSecret, totalPrice }) {
    return (
       <section className={styles.checkoutFormContainer}>
             <u> Règlement </u>
-         <article>
+         <article className={styles.checkoutText}>
             <p>Ne rentrez pas vos véritables coordonnées bancaires.</p>
             <p>
                Vous devez utiliser le numéro de carte suivant &nbsp;
