@@ -18,23 +18,22 @@ export default function ArticleDetail() {
       // Utilise les variables d'environnement de Vercel en production
       urlServer = process.env.VITE_APP_PRODUCTION_URL_BACK;
    }
-   
+
    let { product } = useLocation().state;
    let { cartItem } = useLocation().state;
-
    let article = product || cartItem;
-   const { addToCart, cartItems, substractItemFromCart } = useCart();
 
-   const [message, setMesage] = useMessageToast();
+   const { addToCart, cartItems, substractItemFromCart } = useCart();
+   const [message, setMessage] = useMessageToast();
 
    const handleAddToCart = (product) => {
       addToCart(product);
-      setMesage("Article ajouté au panier");
+      setMessage("Ajouté");
    };
 
    const HandleSubstractItemFromCart = (product) => {
       substractItemFromCart(product);
-      setMesage("Supprimer du panier");
+      setMessage("Supprimé");
    };
    // Vérifie si product est défini
    if (!product && !cartItem) {
@@ -54,7 +53,9 @@ export default function ArticleDetail() {
                   <h3>{article.category}</h3>
                   <p>{article.price} €</p>
                   {!isProductInCart(article.id, cartItems) ? (
-                     <button onClick={() => handleAddToCart(article)}>Ajouter au Panier</button>
+                     <button className={styles.productDoesntInCart} onClick={() => handleAddToCart(article)}>
+                        Ajouter au Panier
+                     </button>
                   ) : (
                      <button className={styles.productInCart} onClick={() => HandleSubstractItemFromCart(article.id)}>
                         <FontAwesomeIcon icon={faHeart} />

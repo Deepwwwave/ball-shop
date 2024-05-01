@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 
 
 *{
-  font-family:  "Edu TAS Beginner", cursive;/* Police d'écriture */
+  font-family: "M PLUS 1p", sans-serif;
 }
 
 /* h1, h2 {
@@ -20,11 +20,16 @@ body {
   padding: 0;
 }
 
+input {
+  font-size: 1.1em
+}
+
 button {
   margin-bottom: 10px;
   padding: 10px 20px 10px 20px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  cursor: pointer
 }
 
 

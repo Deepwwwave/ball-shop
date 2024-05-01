@@ -25,7 +25,6 @@ function AddArticle() {
 
    //Add
    const handleSubmit = async (e) => {
-     
       try {
          const formData = { ...newInfos };
 
@@ -38,13 +37,13 @@ function AddArticle() {
             setMessage(res.msg);
          }
          setNewInfos({
-            imageUrl: '',
+            imageUrl: "",
             image: null,
-            category: '',
-            color: '',
-            price: '',
-            quantity: '',
-            description: ''
+            category: "",
+            color: "",
+            price: "",
+            quantity: "",
+            description: "",
          });
       } catch (error) {
          console.error("Error", error);

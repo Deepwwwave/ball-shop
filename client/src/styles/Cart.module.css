@@ -75,6 +75,10 @@
    border-radius: 5px;
 }
 
+.cartTotalPrice {
+   width:150px
+}
+
 .cartTitleQuantity {
    margin-right: 120px;
 }

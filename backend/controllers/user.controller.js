@@ -114,7 +114,7 @@ export const updatePassword = async (req, res, next) => {
       const query2 = `SELECT validated from user WHERE uuid = ?`;
       const query3 = `UPDATE user SET validated = 'yes' WHERE email = ?`;
       await User.save(query1, datas);
-      res.status(200).json({ status: 200, msg: "Votre mot de passe a été changé." });
+      res.status(200).json({ status: 200, msg: "Votre mot de passe a été modifié avec succès." });
       const user = await User.getOne(query2, datas.uuid);
       if (user[0].validated !== "yes") {
          await User.save(query3, datas.uuid);

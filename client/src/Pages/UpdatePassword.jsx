@@ -24,7 +24,7 @@ export default function UpdatePassword() {
             const res = await updatePassword(password1, uuid, token);
             if (res.response) {
                const { status, msg } = res.response.data;
-               setMessage("Mot de passe incorrect");
+               setMessage(msg);
                console.error(`Error updatePassword: status => `, status, msg);
             } else {
                setIsUpdated(true);
@@ -39,7 +39,7 @@ export default function UpdatePassword() {
                console.log(`%c Success!! updatePassword => status:${res.status} ~ ${res.msg}`, "color: green; font-weight: bold;");
             }
          } else {
-            setMessage("Les deux champs doivent être identiques.");
+            setMessage("Les mots de passes sont différents.");
          }
       } catch (error) {
          console.error("Error", error);
@@ -51,11 +51,11 @@ export default function UpdatePassword() {
          {isUpdated ? (<p> {message} </p>)
          
                     : (<div>
-                        {message === "" ? <p> Inserez votre nouveau mot de passe dans les deux champs:</p> : <p> {message} </p>}
+                        {message === "" ? <p> Écrivez deux fois votre nouveau mot de passe</p> : <p> {message} </p>}
                        <form onSubmit={(e) => changePassword(e)}>
                           <input type="password" placeholder="Nouveau mot de passe" onChange={(e) => setPassword1({ ...password1, password: e.target.value })} />
                           <input type="password" placeholder="Nouveau mot de passe" onChange={(e) => setPassword2({ ...password2, password: e.target.value })} />
-                          <input type="submit" />
+                          <input className={styles.button} type="submit" />
                           <p>
                             Au moins 8 caractères,
                             <br /> 1 lettre minuscule,

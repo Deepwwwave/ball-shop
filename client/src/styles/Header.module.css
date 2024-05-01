@@ -20,7 +20,7 @@
 }
 
 .titleContainer {
-   font-size: 1.em;
+   font-size: 1em;
    font-size: large;
    color: rgb(46, 44, 44);
 }
@@ -45,6 +45,7 @@
 
    .titleContainer {
       margin-top: 10px;
+      margin-left: 90px;
    }
 }
 
