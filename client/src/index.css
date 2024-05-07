@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 
 
 *{
-  font-family: "M PLUS 1p", sans-serif;
+  font-family: "Sofia", cursive;
 }
 
 /* h1, h2 {
@@ -29,7 +29,6 @@ button {
   padding: 10px 20px 10px 20px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  cursor: pointer
 }
 
 

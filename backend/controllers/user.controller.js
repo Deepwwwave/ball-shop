@@ -8,7 +8,7 @@ import { mailValidateAccount, mailForgottenPassword } from "../mail/mailing.js";
 const { TOKEN_SECRET, TOKEN_SECRET_SESSION, DOMAINE_SERVER, DOMAINE_CLIENT } = process.env;
 
 export const signUp = async (req, res, next) => {
-   const query1 = "SELECT * from user WHERE email = ?";
+   const query1 = "SELECT email from user WHERE email = ?";
    try {
       const result = await User.getOne(query1, req.body.email);
       if (result.length && result[0].validated !== "yes") {
@@ -25,9 +25,11 @@ export const signUp = async (req, res, next) => {
          };
          const query2 = "INSERT INTO user (uuid, role, email, password, validated, firstname, lastname, address, code_zip, city, date) VALUES (?,'3',?,?,'no','nc','nc','nc','nc','nc',NOW())";
          await User.save(query2, datas);
+         // voir si véritablement utile (la requête)
          const user = await User.getOne(query1, datas.email);
          console.log(user);
          const PAYLOAD = { uuid: user[0].uuid, role: user[0].role, exp: Math.floor(Date.now() / 1000) + 60 * 60 };
+         // const PAYLOAD = { uuid: datas.uuid, role: "3", exp: Math.floor(Date.now() / 1000) + 60 * 60 };
          const TOKEN = jwt.sign(PAYLOAD, TOKEN_SECRET);
          console.log("Token JWT generated :", TOKEN);
          mailValidateAccount(req.body.email, "Validation du compte", "Bienvenue", "Encore une petite étape, cliquer sur le lien pour confirmer la validation du compte", user[0].uuid);
@@ -56,7 +58,7 @@ export const validateAccount = async (req, res, next) => {
 
 export const signIn = async (req, res, next) => {
    const { email, password } = req.body;
-   const query = "SELECT * from user WHERE email = ?";
+   const query = "SELECT * from user WHERE email = ?"; // A modifier pour l'étoile * =>  password, role, uuid
    try {
       const user = await User.getOne(query, email);
       console.log(user);

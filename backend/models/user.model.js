@@ -10,8 +10,8 @@ class User {
     }
 
     // Get one
-    static async getOne(query, id) {
-        const [result] = await pool.execute(query, [id]);
+    static async getOne(query, ref) {
+        const [result] = await pool.execute(query, [ref]);
         return result;
     }
 

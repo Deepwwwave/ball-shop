@@ -8,6 +8,6 @@ const limiter = (time, numberLimit) => rateLimit({
 	legacyHeaders: false, 
 })
 
-export const normalLimiter = limiter(60,200);
-export const mediumLimiter = limiter(15,10);
+export const normalLimiter = limiter(60,200); // ici pas plus de 200 requêtes en 1h
+export const mediumLimiter = limiter(15,10); 
 export const hardLimiter = limiter(30,3);

@@ -89,9 +89,6 @@ export const addProduct = async (req, res, next) => {
       price: req.body.price,
       quantity: req.body.quantity,
    };
-
-
-
    const query = "INSERT INTO product (date, category, description, imageUrl, color, price, quantity) VALUES (NOW(),?,?,?,?,?,?)";
    try {
       if (!req.files || !req.files.image) {

@@ -28,9 +28,11 @@
 
 .mainConnexion input {
    margin-bottom: 10px;
+   margin-top: 10px;
    padding: 10px;
    border: 1px solid #ccc;
    border-radius: 3px;
+
    
 }
 
@@ -59,6 +61,7 @@
 
 @media screen and (max-width: 420px) {
    .mainConnexion {
+      max-width: 280px;
       margin-left: 20px;
       margin-right: 20px;
       
