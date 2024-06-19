@@ -1,15 +1,16 @@
-import React, { useState } from "react";useDispatch
+import React, { useState } from "react";
+useDispatch;
 import { useNavigate, NavLink } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import { isConnected } from "../store/slices/user";
 import { signUp } from "../api/request/customer";
 import { signIn } from "../api/request/customer";
 import styles from "../styles/Connexion.module.css";
 
 export default function Connexion() {
-   const dispatch = useDispatch()
-   const navigate = useNavigate()   
-   
+   const dispatch = useDispatch();
+   const navigate = useNavigate();
+
    const [returnToHome, setReturnToHome] = useState(false);
    const [toggle, setToggle] = useState(false);
    const [message, setMessage] = useState();
@@ -23,16 +24,16 @@ export default function Connexion() {
       e.preventDefault();
       try {
          const res = await signIn(formData);
-         // res.response correspond à error.response, error qui est catch avec axios (customer.js)
+         // res.response correspond à error.response, error qui est catch avec axios
          if (res.response) {
             const { status, msg } = res.response.data;
             setMessage(msg);
             console.error(`Error signIn: status => `, status, msg);
          } else {
             localStorage.setItem("token", res.token);
-            localStorage.setItem('tokenSession', res.tokenSession);
+            localStorage.setItem("tokenSession", res.tokenSession);
             console.log(`%c Success!! signIn => status:${res.status} ~ ${res.msg}`, "color: green; font-weight: bold;");
-            dispatch(isConnected({userRole: res.role, userUuid: res.uuid}));
+            dispatch(isConnected({ userRole: res.role, userUuid: res.uuid }));
             navigate("/");
          }
       } catch (error) {
@@ -43,41 +44,41 @@ export default function Connexion() {
    // SIGN_UP //
    const onSubmitSignUp = async (e) => {
       e.preventDefault();
-      if(formData.email !== ''){
-
+      if (formData.email !== "") {
          try {
             const res = await signUp(formData);
+            // res.response correspond à error.response, error qui est catch avec axios
             if (res.response) {
-            const { status, msg} = res.response.data;
-            switch (status) {
-               case 400:
-                  setMessage(msg);
-                  break;
+               const { status, msg } = res.response.data;
+               switch (status) {
+                  case 400:
+                     setMessage(msg);
+                     break;
                   case 401:
-                     case 404:
-                        case 409:
-                  setMessage(msg);
-                  break;
-               default:
-                  break;
+                  case 404:
+                  case 409:
+                     setMessage(msg);
+                     break;
+                  default:
+                     break;
                }
-            console.error(`Error signUp: status => `, status, msg);
-         } else {
-            setMessage(res.msg);
-            setFormData({
-               email: "",
-               password: "",
-            });
-            localStorage.setItem('token', res.token);
-            console.log(`%c Success!! signUp => status:${res.status} ~ ${res.msg}}`, "color: green; font-weight: bold;");
-            setReturnToHome(true)
+               console.error(`Error signUp: status => `, status, msg);
+            } else {
+               setMessage(res.msg);
+               setFormData({
+                  email: "",
+                  password: "",
+               });
+               localStorage.setItem("token", res.token);
+               console.log(`%c Success!! signUp => status:${res.status} ~ ${res.msg}}`, "color: green; font-weight: bold;");
+               setReturnToHome(true);
+            }
+         } catch (error) {
+            console.error("Error :", error);
          }
-      } catch (error) {
-         console.error("Error :", error);
+      } else {
+         setMessage("Tous les champs doivent être remplis.");
       }
-   } else {
-      setMessage("Tous les champs doivent être remplis.")
-   }
    };
 
    const changeToggle = () => {
@@ -86,8 +87,8 @@ export default function Connexion() {
 
    return (
       <main className={styles.mainConnexion}>
-         {returnToHome && (<NavLink to="/">Retour</NavLink>)}
-         <h3>{ toggle ? "Créer un compte" : " Se connecter "}</h3>
+         {returnToHome && <NavLink to="/">Retour</NavLink>}
+         <h3>{toggle ? "Créer un compte" : " Se connecter "}</h3>
          <form onSubmit={(e) => (toggle ? onSubmitSignUp(e) : onSubmitSignIn(e))} className={styles.form}>
             {message !== null && <p>{message}</p>}
             <input type="text" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="Email" />
@@ -102,10 +103,10 @@ export default function Connexion() {
             )}
             <input className={styles.button} type="submit" value={toggle ? "Créer" : "Connexion"} />
          </form>
-         { !toggle && ( <NavLink to='/forgotten-password' > Mot de passe oublié </NavLink> )}
-         <br/>
-         <br/>
-         <br/>
+         {!toggle && <NavLink to="/forgotten-password"> Mot de passe oublié </NavLink>}
+         <br />
+         <br />
+         <br />
          <a onClick={changeToggle}> {toggle ? "J'ai déjà un compte" : "Créer un compte"} </a>
       </main>
    );

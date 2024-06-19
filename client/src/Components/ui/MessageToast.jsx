@@ -5,9 +5,7 @@ export default function MessageToast({ content }) {
 
       
    return (
-
       <div className={styles.messageToastContainer}>{content}</div>
-
    );
 }
 

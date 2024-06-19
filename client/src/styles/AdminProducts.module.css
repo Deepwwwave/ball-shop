@@ -15,9 +15,10 @@
    padding: 40px;
    border-radius: 10px;
    border: solid 1px rgb(215, 200, 200, 0.3);
-   width: 50%;
+   width: 65%;
    margin: auto;
 }
+
 .productInfo input,
 .productInfo textarea {
    resize: none;
@@ -29,9 +30,10 @@
    margin-bottom: 10px;
    border: 1px solid #ddd;
    border-radius: 4px;
-   width: 400px;
-   font-size: 1.1em;
+   width: 250px;
+   font-size: 0.9em;
 }
+
 .addContainer input,
 .addContainer textarea {
    resize: none;
@@ -43,7 +45,7 @@
    margin-bottom: 10px;
    border: 1px solid #ddd;
    border-radius: 4px;
-   width: 400px;
+   width: 200px;
    font-size: 1.1em;
 }
 
@@ -85,6 +87,7 @@
    padding: 10px;
    text-align: center;
    margin: auto;
+   width: 80%;
 }
 
 .productArticle {
@@ -161,24 +164,24 @@
    background-color: rgb(189, 238, 238);
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (min-width: 950px) {
    .addContainer input,
    .addContainer textarea {
-      width: 200px;
+      width: 400px;
    }
 
    .addContainer {
-      width: 65%;
+      width: 50%;
    }
 
    .editDeleteContainer {
-      width: 80%;
+      width: auto;
       text-align: center;
    }
 
    .productInfo input,
    .productInfo textarea {
-      width: 250px;
-      font-size: 0.9em;
+      width: 400px;
+      font-size: 1.1em;
    }
 }

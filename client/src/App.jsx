@@ -71,7 +71,7 @@ function App() {
                <Route path="forgotten-password" element={<ForgottenPassword />} />
 
                <Route path="update-password/:uuid" element={<UpdatePassword />} />
-               <Route path="facturation" element={<InvoicePDF />} />
+               {/* <Route path="facturation" element={<InvoicePDF />} /> */}
 
                <Route path="cgv" element={<CGV />} />
                <Route path="mentions-legales" element={<MentionsLegales />} />

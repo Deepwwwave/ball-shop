@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+// Gestion de la durée du message toast
 const useMessageToast = (initialMessage = '', duration = 850) => {
   const [message, setMessage] = useState(initialMessage);
 
