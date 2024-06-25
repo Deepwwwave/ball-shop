@@ -67,7 +67,7 @@ const cart = createSlice({
       updateItems(state, action) {
          const newItems = action.payload;
 
-         // Filtrer les éléments du panier qui ne se trouvent pas dans newItems ou dont les données (hors itemQuantity) sont différentes
+         // Filtre les éléments du panier qui ne se trouvent pas dans newItems ou dont les données (hors itemQuantity) sont différentes
          state.items = state.items.filter((existingItem) => {
             const newItem = newItems.find((item) => item.id === existingItem.id);
             if (newItem) {
@@ -78,7 +78,7 @@ const cart = createSlice({
             return false;
          });
 
-         // Mettre à jour state.totalItems et state.totalPrice en fonction des modifications
+         // Mise à jour de state.totalItems et state.totalPrice en fonction des modifications
          state.totalItems = state.items.reduce((total, item) => total + item.itemQuantity, 0);
          state.totalCartPrice = state.items.reduce((total, item) => total + item.totalPrice, 4.95);
 

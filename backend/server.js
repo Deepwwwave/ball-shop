@@ -1,6 +1,6 @@
 import express from "express";
-import http from "http"; // Importez le module http
-import { Server as SocketServer } from "socket.io"; // Importez Socket.io
+import http from "http";
+import { Server as SocketServer } from "socket.io";
 
 import path from "path";
 import { fileURLToPath } from "url";
@@ -24,8 +24,8 @@ const server = http.createServer(app);
 
 export const io = new SocketServer(server, {
    cors: {
-      origin: "*", // Permettre l'accès depuis n'importe quelle origine (à ajuster en fonction de vos besoins)
-      methods: ["GET", "POST"], // Autoriser les méthodes GET et POST
+      origin: "*", 
+      methods: ["GET", "POST"], 
    },
 });
 
@@ -34,10 +34,10 @@ io.on("connection", (socket) => {
    console.log("Nouvelle connexion WebSocket établie");
 
    socket.on("cartOpened", (data) => {
-      // Votre logique de traitement de l'événement ici
+      // Logique de traitement de l'événement
       const responseData = { message: "Cart updated !" };
 
-      // Envoyer une réponse au client
+      // Réponse au client
       socket.emit("cartUpdated", responseData);
    });
 

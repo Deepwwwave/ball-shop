@@ -13,7 +13,7 @@ export default function Admin() {
   // Sécurité - accès page admin
   useEffect(() => {
     if (userRole > 2 || userRole === '') {
-      navigate("/");
+      navigate("/boutique");
     } 
  }, [userRole]);
 

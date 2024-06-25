@@ -1,69 +1,64 @@
 /* connexion.module.css */
 
 .mainConnexion {
-   
-   max-width: 400px;
-   margin: 4em auto;
+   max-width: 280px; 
+   margin: 4em 20px; 
+   margin-top: 130px;
    margin-bottom: 200px;
    padding: 20px 20px 60px 20px;
-   border: 1px solid #ddd; /* Couleur de bordure similaire au header et au footer */
+   border: 1px solid #ddd; 
    border-radius: 8px;
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-   background-color: #f8f8f8; /* Couleur de fond douce */
-   font-family: "Lobster", cursive; /* Police d'écriture similaire au header et au footer */
-   margin-top: 130px;
-}
-
-.mainConnexion h3 {
+   background-color: #f8f8f8; 
+   font-family: "Lobster", cursive; 
+ }
+ 
+ .mainConnexion h3 {
    text-align: center;
    color: #333;
-   font-weight: 100 ;
-}
-
-.mainConnexion,
-.mainConnexion form {
+   font-weight: 100;
+ }
+ 
+ .mainConnexion,
+ .mainConnexion form {
    display: flex;
    flex-direction: column;
-}
-
-.mainConnexion input {
+ }
+ 
+ .mainConnexion input {
    margin-bottom: 10px;
    margin-top: 10px;
    padding: 10px;
    border: 1px solid #ccc;
    border-radius: 3px;
-
-   
-}
-
-.button {
+ }
+ 
+ .button {
    margin-bottom: 15px;
-}
-
-.button:hover {
-   cursor:pointer
-}
-
-.mainConnexion p {
-   color: #333; /* Couleur du texte similaire au header et au footer */
-}
-
-.mainConnexion a {
+ }
+ 
+ .button:hover {
+   cursor: pointer;
+ }
+ 
+ .mainConnexion p {
+   color: #333; 
+ }
+ 
+ .mainConnexion a {
    cursor: pointer;
    color: #424A76;
    text-decoration: underline;
-}
-
-.mainConnexion a:hover {
+ }
+ 
+ .mainConnexion a:hover {
    color: hsl(0, 90%, 73%, 100%);
-}
-
-
-@media screen and (max-width: 420px) {
+ }
+ 
+ @media screen and (min-width: 421px) {
    .mainConnexion {
-      max-width: 280px;
-      margin-left: 20px;
-      margin-right: 20px;
-      
+     max-width: 400px; 
+     margin: 4em auto;
    }
-}
+ }
+ 

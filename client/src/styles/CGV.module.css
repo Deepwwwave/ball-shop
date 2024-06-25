@@ -1,21 +1,21 @@
 .cgvContainer {
-   color: #333; /* Couleur du texte */
-
+   color: #333; 
    margin: auto;
    margin-top: 100px;
    margin-bottom: 100px;
-   width: 50%;
+   width: 90%; 
    text-align: justify;
    padding: 10px;
    overflow-x: hidden;
-}
-
-.cgvContainer a {
-   color: #333; /* Couleur du texte */
-}
-
-@media screen and (max-width: 500px) {
+ }
+ 
+ .cgvContainer a {
+   color: #333; 
+ }
+ 
+ @media screen and (min-width: 501px) {
    .cgvContainer {
-      width: 90%;
+     width: 50%;
    }
-}
+ }
+ 

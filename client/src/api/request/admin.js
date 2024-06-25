@@ -24,9 +24,9 @@ export const reqGetAllOrders = async () => {
 
 export const reqAddProduct = async (formDatas) => {
     try {
-        const res = await axiosTokenHandler.post(`${backendUrl}/api/v1/admin/addProduct`, formDatas, { // Utilisez formData comme deuxième paramètre
+        const res = await axiosTokenHandler.post(`${backendUrl}/api/v1/admin/addProduct`, formDatas, { 
             headers: {
-                'Content-Type': 'multipart/form-data' // Assurez-vous que le type de contenu est défini sur multipart/form-data
+                'Content-Type': 'multipart/form-data' 
             }
         });
         return res.data
@@ -36,11 +36,11 @@ export const reqAddProduct = async (formDatas) => {
 }
 
 
-export const reqEditProduct = async (formData, id) => { // Prendre FormData en tant que premier paramètre
+export const reqEditProduct = async (formData, id) => { 
     try {
-        const res = await axiosTokenHandler.patch(`${backendUrl}/api/v1/admin/editProduct/${id}`, formData, { // Utilisez formData comme deuxième paramètre
+        const res = await axiosTokenHandler.patch(`${backendUrl}/api/v1/admin/editProduct/${id}`, formData, {
             headers: {
-                'Content-Type': 'multipart/form-data' // Assurez-vous que le type de contenu est défini sur multipart/form-data
+                'Content-Type': 'multipart/form-data'
             }
         });
         return res.data

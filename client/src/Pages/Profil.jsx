@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; // Importez useEffect de React
+import React, { useState, useEffect } from "react"; 
 import styles from "../styles/Profil.module.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -9,10 +9,10 @@ export default function Profil() {
    const [email, setEmail] = useState("");
    const navigate = useNavigate();
 
-   useEffect(() => { // Utilisez useEffect directement à l'intérieur du composant
-      const getOneUser = async () => { // Définissez getOneUser à l'intérieur de useEffect
+   useEffect(() => { 
+      const getOneUser = async () => { 
          try {
-            const res = await reqGetOneUser(userUuid); // Utilisez userUuid directement depuis le scope
+            const res = await reqGetOneUser(userUuid); 
             if (res.response) {
                console.log(res.response.msg);
                navigate("/")
@@ -25,8 +25,8 @@ export default function Profil() {
          }
       };
 
-      getOneUser(); // Appelez getOneUser ici
-   }, [userUuid]); // Assurez-vous de passer userUuid dans le tableau de dépendances pour que useEffect soit rappelé lorsque userUuid change
+      getOneUser(); 
+   }, [userUuid]); 
 
    return (
       <section className={styles.profilContainer}>

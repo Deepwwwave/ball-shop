@@ -7,6 +7,7 @@ import { mailValidateAccount, mailForgottenPassword } from "../mail/mailing.js";
 
 const { TOKEN_SECRET, TOKEN_SECRET_SESSION, DOMAINE_SERVER, DOMAINE_CLIENT } = process.env;
 
+
 export const signUp = async (req, res, next) => {
    const query1 = "SELECT email from user WHERE email = ?";
    try {
@@ -46,7 +47,7 @@ export const validateAccount = async (req, res, next) => {
    };
    console.log("UUID:", datas); // Ajoutez cette ligne
 
-   const query = "UPDATE user SET validated = 'yes' WHERE uuid = ?";
+   const query = "UPDATE user SET validated = 'yes' WHERE uuid = ?"; 
    try {
       await User.save(query, datas);
       res.status(200).json({ status: 200, msg: "Compte validé !" });
@@ -58,7 +59,7 @@ export const validateAccount = async (req, res, next) => {
 
 export const signIn = async (req, res, next) => {
    const { email, password } = req.body;
-   const query = "SELECT * from user WHERE email = ?"; // A modifier pour l'étoile * =>  password, role, uuid
+   const query = "SELECT password, role, validated, uuid from user WHERE email = ?";
    try {
       const user = await User.getOne(query, email);
       console.log(user);
@@ -87,7 +88,7 @@ export const signIn = async (req, res, next) => {
 
 export const forgottenPassword = async (req, res, next) => {
    console.log(req.body.email);
-   const query = "SELECT * from user WHERE email = ?";
+   const query = "SELECT uuid from user WHERE email = ?";
    try {
       const user = await User.getOne(query, req.body.email);
       if (!user.length) {

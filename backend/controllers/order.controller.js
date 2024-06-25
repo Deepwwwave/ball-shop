@@ -2,7 +2,7 @@ import Order from "../models/order.model.js";
 import Product from "../models/product.model.js";
 import stripe from "stripe";
 
-// Remember to switch to your live secret key in production.
+// Ne pas oublier de switch avec la live secret key en production.
 const stripeAPI = stripe('sk_test_51KZErmEc4VeEZWJYywEQn54NqY0M4xxEU2HGfQ5IHtC631ipHQxEuA3UiY3emX1x6qijo1cB4RagE728JGqUIu5E00rRwoeJ8V');
 // const stripeAPI = stripe(process.env.SECRET_STRIPE_KEY);
 
@@ -15,23 +15,23 @@ export const addOrder = async (req, res, next) => {
    const queryUpdateOrder = "UPDATE orders SET total_price = ? WHERE id = ?";
    
    try {
-      // Enregistrer la commande de base dans la base de données
+      // Enregistrement de  la commande dans la base de données
       const resSaved = await Order.save(queryInsertOrder, {totalCartPrice});
-      const orderId = resSaved.insertId; // Récupérer l'ID de la commande nouvellement créée
+      const orderId = resSaved.insertId; //  ID de la commande nouvellement créée
       const shippingCost = 4.95
       const datasUpdate = {
          totalPrice: shippingCost,
          id: orderId,
       };
 
-      // Ajouter les produits à la commande et calculer le total
+      // Ajout des produits à la commande et calcul du total
       for (const product of cartItems) {
-         // Récupérer les détails du produit depuis la base de données
+         // Récupération du détail des produits 
          const queryPriceProduct = `SELECT price FROM product WHERE id = ?`;
          const price = await Product.getOne(queryPriceProduct, product.id);
          console.log(price[0].price)
 
-         // Vérifier si le produit existe et si son prix correspond au prix enregistré dans la base de données
+         // Comparaison des produits avec la base de donnée, vérification existence et prix.
          if (price && parseFloat(product.price) === parseFloat(price[0].price)) {
             const totalPricePerProduct = parseInt(product.itemQuantity) * parseFloat(product.price);
             const datasDetail = {
@@ -44,28 +44,28 @@ export const addOrder = async (req, res, next) => {
             await Order.save(queryInsertOrderDetail, datasDetail);
             datasUpdate.totalPrice += totalPricePerProduct;
          } else {
-            // Si le produit n'existe pas ou si le prix ne correspond pas, retourner une erreur
+            // Si le produit n'existe pas ou si le prix ne correspond pas
             return res.status(400).json({ msg: "Le produit sélectionné n'existe pas ou le prix ne correspond pas à celui enregistré dans la base de données." });
          }
       }
 
-      // Mettre à jour le montant total de la commande dans la base de données
+      // Maj du montant total de la commande dans la base de données
       await Order.save(queryUpdateOrder, datasUpdate);
 
-      // Créer le paiement Stripe
+      // Paiement Stripe
       const paymentIntent = await stripeAPI.paymentIntents.create({
-         amount: datasUpdate.totalPrice * 100, // Convertir en cents
+         amount: datasUpdate.totalPrice * 100, // Convertions en cents
          currency: "eur",
          automatic_payment_methods: {
             enabled: true,
          },
       });
       console.log(paymentIntent.client_secret)
-      // Envoyer la réponse avec l'ID de la commande et le clientSecret du paiement
+      // Réponse avec l'ID de la commande et le clientSecret du paiement
       res.status(200).json({
          status: 200,
          msg: "Commande enregistrée avec succès",
-         orderId: orderId, // Retourner l'ID de la commande dans la réponse
+         orderId: orderId, 
          clientSecret: paymentIntent.client_secret,
          totalPrice: datasUpdate.totalPrice
       });
@@ -78,14 +78,14 @@ export const confirmPayment = async (req, res, next) => {
    const { orderId } = req.body;
 
    try {
-      // Mettre à jour le statut de la commande dans la base de données
+      // Statut "payed" de la commande dans la base de données
       const queryUpdateStatus = 'UPDATE orders SET status = "payed" WHERE id = ?';
       await Order.save(queryUpdateStatus, [orderId]);
 
-      // Envoyer une réponse indiquant que la mise à jour a été effectuée avec succès
+      // Mise à jour avec succès
       res.status(200).json({ message: "Payment confirmed and order status updated successfully" });
    } catch (error) {
-      // Gérer les erreurs
+      // Gestion des erreurs
       console.error("Error confirming payment and updating order status:", error);
       return next(error);
    }

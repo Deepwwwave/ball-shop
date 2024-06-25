@@ -2,6 +2,7 @@ import Product from "../models/product.model.js";
 import path from "path";
 import { io } from "../server.js";
 
+// Get Products
 export const getAllProducts = async (req, res, next) => {
    const query = "SELECT * FROM product";
    try {
@@ -18,6 +19,7 @@ export const getAllProducts = async (req, res, next) => {
    }
 };
 
+// Get one product
 export const getOneProduct = async (req, res, next) => {
    const query = `SELECT * FROM product WHERE id = ?`;
    try {
@@ -32,54 +34,7 @@ export const getOneProduct = async (req, res, next) => {
    }
 };
 
-// export const addProduct = async (req, res, next) => {
-//    try {
-//       let datas = { ...req.body };
-
-//       // Vérifier si une image a été téléchargée
-//       if (req.files && req.files.image) {
-//          const image = req.files.image;
-//          const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-//          const imageName = `image-${uniqueSuffix}${path.extname(image.name)}`;
-
-//          // Déplacer l'image téléchargée vers le répertoire public
-//          image.mv("public/images/" + imageName, (error) => {
-//             if (error) {
-//                return res.status(500).json({ message: "Erreur lors de l'enregistrement de l'image." });
-//             }
-//             // Mettre à jour l'URL de l'image dans datas
-//             datas.imageUrl = "/images/" + imageName;
-
-//             // Ajouter le produit à la base de données avec l'image
-//             Product.create(datas, (err, result) => {
-//                if (err) {
-//                   return res.status(500).json({ message: "Erreur lors de l'ajout du produit." });
-//                }
-//                res.status(201).json({
-//                   status: 201,
-//                   msg: "product added!",
-//                   newProduct: result,
-//                });
-//             });
-//          });
-//       } else {
-//          // Ajouter le produit à la base de données sans image
-//          Product.create(datas, (err, result) => {
-//             if (err) {
-//                return res.status(500).json({ message: "Erreur lors de l'ajout du produit." });
-//             }
-//             res.status(201).json({
-//                status: 201,
-//                msg: "product added!",
-//                newProduct: result,
-//             });
-//          });
-//       }
-//    } catch (error) {
-//       return next(error);
-//    }
-// };
-
+/*****  Add product *****/
 export const addProduct = async (req, res, next) => {
    const datas = {
       category: req.body.category,
@@ -102,7 +57,7 @@ export const addProduct = async (req, res, next) => {
             return res.status(500).json({ message: "Erreur lors de l'enregistrement de l'image." });
          }
       });
-      // Mettre à jour l'URL de l'image dans datas
+      // Maj de l'URL de l'image dans datas
       datas.imageUrl = "/images/" + imageName;
 
       const newToken = req.newToken; // nouveau token qui vient du middleware refreshToken situé sur la même route que ce contrôller
@@ -118,6 +73,7 @@ export const addProduct = async (req, res, next) => {
    }
 };
 
+/***** Delete Product *****/
 export const deleteProduct = async (req, res, next) => {
    const query = `DELETE FROM product WHERE id = ?`;
    try {
@@ -134,6 +90,7 @@ export const deleteProduct = async (req, res, next) => {
    }
 };
 
+/***** Edit product *****/
 export const editProduct = async (req, res, next) => {
    let datas = {};
 
@@ -145,7 +102,6 @@ export const editProduct = async (req, res, next) => {
          datas[key] = req.body[key];
       }
    }
-
    datas = { ...datas };
    console.log(datas);
    console.log(datas.description);
@@ -162,9 +118,9 @@ export const editProduct = async (req, res, next) => {
 
    try {
       const newToken = req.newToken; // nouveau token qui vient du middleware refreshToken situé sur la même route que ce contrôller
-      // Vérifier si imageUrl est défini
+      // Est ce que imageUrl existe
       if (datas.imageUrl) {
-         // Exécuter le code pour le téléchargement d'image ici
+         // Téléchargement d'image
          if (!req.files || !req.files.image) {
             return res.status(400).json({ msg: "Aucune image téléchargée" });
          }
@@ -176,13 +132,13 @@ export const editProduct = async (req, res, next) => {
             if (error) {
                return res.status(500).json({ message: "Erreur lors de l'enregistrement de l'image." });
             }
-            // Mettre à jour l'URL de l'image dans datas
+            // Maj de l'URL de l'image dans datas
             datas.imageUrl = "/images/" + imageName;
 
-            // Exécuter la requête SQL mise à jour
+            // Execution de la requête de mise à jour
             Product.save(query, datas);
 
-            // Répondre avec la réussite
+            // Réponse
             res.status(200).json({
                status: 200,
                msg: "product updated!",

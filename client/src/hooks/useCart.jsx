@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem, removeItem, clearCart, substractItemQuantity, updateItems } from '../store/slices/cart'; // Importez les actions de votre slice de panier
+import { addItem, removeItem, clearCart, substractItemQuantity, updateItems } from '../store/slices/cart';
 
 // Permet de récupérer les infos du state global du panier produit (cart) et de les modifier.
 // useCart est utilisé dans les composants ayant besoin de récupérer ou de modifier les infos du panier produit.

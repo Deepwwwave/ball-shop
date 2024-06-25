@@ -55,7 +55,7 @@ function AddArticle() {
       setShowAddForm(false);
       window.scrollTo({
          top: 0,
-         behavior: "smooth", // Pour un défilement fluide, sinon, utilisez 'auto' ou 'instant'
+         behavior: "smooth", // Pour un défilement fluide
       });
    };
 
@@ -124,6 +124,7 @@ function EditOrDeleteArticle({ productId }) {
          } else {
             console.log(res.status + " " + res.msg);
             setMessage(res.msg);
+            window.location.reload();
          }
       } catch (error) {
          console.error("Error", error);
@@ -139,6 +140,7 @@ function EditOrDeleteArticle({ productId }) {
             setMessage(res.response.msg);
          } else {
             setMessage(res.msg);
+            window.location.reload();
          }
       } catch (error) {
          console.error("Error", error);
